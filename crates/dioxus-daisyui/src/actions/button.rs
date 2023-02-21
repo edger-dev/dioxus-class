@@ -19,7 +19,7 @@ pub const glass: &'static str = "glass";
 pub const loading: &'static str = "loading";
 pub const no_animation: &'static str = "no-animation";
 
-//Responsive
+// Responsive
 pub const btn_lg: &'static str = "btn-lg";
 pub const btn_md: &'static str = "btn-md";
 pub const btn_sm: &'static str = "btn-sm";
