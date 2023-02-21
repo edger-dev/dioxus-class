@@ -16,6 +16,9 @@ default = [
 components = [
     "dioxus-class/components",
 ]
+build = [
+    "dioxus-class/build",
+]
 
 [dependencies]
 dioxus = "0.3.1"

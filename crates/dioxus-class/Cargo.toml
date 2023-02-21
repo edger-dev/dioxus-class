@@ -14,6 +14,7 @@ default = [
     "components",
 ]
 components = []
+build = []
 
 [dependencies]
 dioxus = "0.3.1"

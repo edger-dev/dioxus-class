@@ -59,6 +59,18 @@ impl From<Vec<String>> for Class {
     }
 }
 
+impl From<&[&str]> for Class {
+    fn from(v: &[&str]) -> Self {
+        Self(v.iter().map(|x| x.to_string()).collect::<Vec<String>>())
+    }
+}
+
+impl From<&[String]> for Class {
+    fn from(v: &[String]) -> Self {
+        Self(v.to_vec())
+    }
+}
+
 impl Add<&str> for Class {
     type Output = Self;
 
