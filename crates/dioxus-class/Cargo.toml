@@ -1,0 +1,19 @@
+[package]
+name = "dioxus-class"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+homepage = "https://www.edger.dev"
+repository = "https://github.com/edger-dev/dioxus-class"
+description = "Dioxus class"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[features]
+default = [
+    "components",
+]
+components = []
+
+[dependencies]
+dioxus = "0.3.1"

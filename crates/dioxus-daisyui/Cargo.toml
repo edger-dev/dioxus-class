@@ -1,0 +1,22 @@
+[package]
+name = "dioxus-daisyui"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+homepage = "https://www.edger.dev"
+repository = "https://github.com/edger-dev/dioxus-daisyui"
+description = "Dioxus daisyui"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[features]
+default = [
+    "components",
+]
+components = [
+    "dioxus-class/components",
+]
+
+[dependencies]
+dioxus = "0.3.1"
+dioxus-class = { path = "../dioxus-class", version = "0.1.0", default-features = false }
