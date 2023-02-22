@@ -22,4 +22,4 @@ build = [
 
 [dependencies]
 dioxus = { workspace = true }
-dioxus-class = { workspace = true }
+dioxus-class = { workspace = true, default-features = false }
