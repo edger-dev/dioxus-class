@@ -1,8 +1,5 @@
 #![allow(non_snake_case, non_upper_case_globals)]
 
-#[macro_use]
-extern crate dioxus_class;
-
 pub mod actions;
 pub mod display;
 pub mod input;
@@ -15,6 +12,7 @@ pub mod mockup;
 pub mod components;
 
 pub mod prelude {
+    pub use dioxus_class::class;
     pub use dioxus_class::prelude::*;
 
     pub use crate::actions::button;
