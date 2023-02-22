@@ -1,6 +1,6 @@
 [package]
 name = "dioxus-daisyui"
-version = "0.1.3"
+version = "0.1.4"
 edition = "2021"
 license = "MIT"
 homepage = "https://www.edger.dev"
@@ -9,17 +9,6 @@ description = "Dioxus daisyui"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
-[features]
-default = [
-    "components",
-]
-components = [
-    "dioxus-class/components",
-]
-build = [
-    "dioxus-class/build",
-]
-
 [dependencies]
 dioxus = { workspace = true }
-dioxus-class = { workspace = true, default-features = false }
+dioxus-tailwindcss = { workspace = true, default-features = false }

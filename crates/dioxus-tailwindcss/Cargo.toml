@@ -1,13 +1,14 @@
 [package]
-name = "dioxus-class"
+name = "dioxus-tailwindcss"
 version = "0.1.4"
 edition = "2021"
 license = "MIT"
 homepage = "https://www.edger.dev"
-repository = "https://github.com/edger-dev/dioxus-class"
-description = "Dioxus class"
+repository = "https://github.com/edger-dev/dioxus-tailwindcss"
+description = "Dioxus tailwindcss"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
 dioxus = { workspace = true }
+dioxus-class = { workspace = true }

@@ -1,5 +1,8 @@
 #![allow(non_snake_case, non_upper_case_globals)]
 
+pub use dioxus_tailwindcss;
+pub use dioxus_tailwindcss::dioxus_class;
+
 pub mod actions;
 pub mod display;
 pub mod input;
@@ -8,12 +11,10 @@ pub mod layout;
 pub mod navigation;
 pub mod mockup;
 
-#[cfg(feature = "components")]
 pub mod components;
 
 pub mod prelude {
-    pub use dioxus_class::class;
-    pub use dioxus_class::prelude::*;
+    pub use dioxus_tailwindcss::prelude::*;
 
     pub use crate::actions::button;
     pub use crate::actions::dropdown;
@@ -69,6 +70,5 @@ pub mod prelude {
 
     pub use crate::mockup;
 
-    #[cfg(feature = "components")]
     pub use crate::components::prelude::*;
 }
