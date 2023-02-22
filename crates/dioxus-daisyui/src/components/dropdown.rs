@@ -5,16 +5,16 @@ use crate::prelude::*;
 pub struct DropdownProps<'a> {
     pub class: Option<&'a Class>,
     pub children: Element<'a>,
-    pub content: DivProps<'a>,
+    pub content: ItemProps<'a>,
 }
 
 pub fn Dropdown<'a>(cx: Scope<'a, DropdownProps<'a>>) -> Element {
     cx.render(rsx!(
         div {
-            class: Class::from(vec![dropdown::dropdown]) + cx.props.class,
+            class: class!(dropdown::dropdown) + cx.props.class,
             &cx.props.children,
             div {
-                class: Class::from(vec![dropdown::dropdown_content]) + cx.props.content.class,
+                class: class!(dropdown::dropdown_content) + cx.props.content.class,
                 &cx.props.content.children
             }
         }

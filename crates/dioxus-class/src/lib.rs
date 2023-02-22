@@ -2,6 +2,9 @@
 
 pub mod class;
 
+#[cfg(feature = "macro")]
+pub mod macros;
+
 #[cfg(feature = "components")]
 pub mod components;
 

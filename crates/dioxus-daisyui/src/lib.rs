@@ -1,5 +1,8 @@
 #![allow(non_snake_case, non_upper_case_globals)]
 
+#[macro_use]
+extern crate dioxus_class;
+
 pub mod actions;
 pub mod display;
 pub mod input;

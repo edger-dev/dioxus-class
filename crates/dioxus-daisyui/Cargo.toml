@@ -1,6 +1,6 @@
 [package]
 name = "dioxus-daisyui"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 license = "MIT"
 homepage = "https://www.edger.dev"
@@ -21,5 +21,5 @@ build = [
 ]
 
 [dependencies]
-dioxus = "0.3.1"
-dioxus-class = { path = "../dioxus-class", version = "0.1.0", default-features = false }
+dioxus = { workspace = true }
+dioxus-class = { workspace = true }

@@ -1,10 +1,10 @@
 use dioxus::prelude::*;
 use crate::prelude::*;
 
-pub fn Button<'a>(cx: Scope<'a, DivProps<'a>>) -> Element {
+pub fn Button<'a>(cx: Scope<'a, ItemProps<'a>>) -> Element {
     cx.render(rsx!(
         button {
-            class: Class::from(vec![button::btn]) + cx.props.class,
+            class: class!(button::btn) + cx.props.class,
             &cx.props.children
         }
     ))
