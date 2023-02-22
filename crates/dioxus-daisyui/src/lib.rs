@@ -2,6 +2,7 @@
 
 pub use dioxus_tailwindcss;
 pub use dioxus_tailwindcss::dioxus_class;
+pub use dioxus_tailwindcss::dioxus_class::build;
 
 pub mod actions;
 pub mod display;
