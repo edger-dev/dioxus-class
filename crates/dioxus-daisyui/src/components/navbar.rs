@@ -13,22 +13,22 @@ pub struct NavbarProps<'a> {
 pub fn Navbar<'a>(cx: Scope<'a, NavbarProps<'a>>) -> Element {
     cx.render(rsx!(
         div {
-            class: class!(navbar::navbar) + cx.props.class,
+            class: class!(navbar) + cx.props.class,
             if let Some(start) = &cx.props.start {
                 rsx!(div {
-                    class: class!(navbar::navbar_start) + start.class,
+                    class: class!(navbar_start) + start.class,
                     &start.children
                 })
             }
             if let Some(center) = &cx.props.center {
                 rsx!(div {
-                    class: class!(navbar::navbar_center) + center.class,
+                    class: class!(navbar_center) + center.class,
                     &center.children
                 })
             }
             if let Some(end) = &cx.props.end {
                 rsx!(div {
-                    class: class!(navbar::navbar_end) + end.class,
+                    class: class!(navbar_end) + end.class,
                     &end.children,
                 })
             }
