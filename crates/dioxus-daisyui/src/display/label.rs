@@ -1,1 +1,0 @@
-pub const label: &'static str = "label";

@@ -1,0 +1,26 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [Unreleased]
+
+### Added
+
+### Fixed
+
+## [0.2.0] - 2023-02-25
+
+### Added
+
+- macros (constant!) for easier extension writing
+
+## [0.1.x]
+
+### Added
+
+- Class struct
+- build::generate to write files with defined classes, which can be used for css generation when needed (e.g. used for tailwindcss)
+- macros (class!, style!) for creating styles that includes classes

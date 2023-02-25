@@ -1,1 +1,0 @@
-pub const form_control: &'static str = "form-control";
