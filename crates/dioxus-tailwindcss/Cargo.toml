@@ -12,4 +12,3 @@ description = "Dioxus tailwindcss"
 [dependencies]
 dioxus = { workspace = true }
 dioxus-class = { workspace = true }
-paste = { workspace = true }
