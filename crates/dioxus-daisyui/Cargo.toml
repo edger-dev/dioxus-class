@@ -1,6 +1,6 @@
 [package]
-name = "dioxus-daisyui"
 version = "0.2.1"
+name = "dioxus-daisyui"
 description = "Dioxus daisyui"
 
 edition = { workspace = true }
@@ -12,4 +12,4 @@ repository = { workspace = true }
 
 [dependencies]
 dioxus = { workspace = true }
-dioxus-tailwindcss = { workspace = true, default-features = false }
+dioxus-tailwindcss = { workspace = true }

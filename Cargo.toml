@@ -1,5 +1,4 @@
 [workspace.package]
-version = "0.2.1"
 edition = "2021"
 license = "MIT"
 homepage = "https://github.com/edger-dev/dioxus-class"
@@ -14,9 +13,9 @@ members = [
 
 [workspace.dependencies]
 dioxus = "0.3.1"
-dioxus-class = { path = "crates/dioxus-class", version = "0.2.0" }
-dioxus-tailwindcss = { path = "crates/dioxus-tailwindcss", version = "0.2.0" }
-dioxus-daisyui = { path = "crates/dioxus-daisyui", version = "0.2.0" }
+dioxus-class = { path = "crates/dioxus-class", version = "0.2.1" }
+dioxus-tailwindcss = { path = "crates/dioxus-tailwindcss", version = "0.2.1" }
+dioxus-daisyui = { path = "crates/dioxus-daisyui", version = "0.2.1" }
 
 paste = "1.0.11"
 

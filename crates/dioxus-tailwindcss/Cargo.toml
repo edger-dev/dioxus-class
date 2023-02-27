@@ -1,6 +1,6 @@
 [package]
-name = "dioxus-tailwindcss"
 version = "0.2.1"
+name = "dioxus-tailwindcss"
 description = "Dioxus tailwindcss"
 
 edition = { workspace = true }
