@@ -12,12 +12,12 @@ members = [
 ]
 
 [workspace.dependencies]
-dioxus = "0.3.1"
+dioxus = "0.3"
 dioxus-class = { path = "crates/dioxus-class", version = "0.2.1" }
 dioxus-tailwindcss = { path = "crates/dioxus-tailwindcss", version = "0.2.1" }
 dioxus-daisyui = { path = "crates/dioxus-daisyui", version = "0.2.1" }
 
-paste = "1.0.11"
+paste = "1.0"
 
 [package]
 publish = false
@@ -35,4 +35,4 @@ dioxus = { workspace = true }
 
 im-rc = "15.1"
 dioxus-desktop = "0.3"
-lazy_static = "1.4.0"
+lazy_static = "1.4"
