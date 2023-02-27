@@ -4,6 +4,9 @@ pub use dioxus_tailwindcss;
 pub use dioxus_tailwindcss::dioxus_class;
 pub use dioxus_class::build;
 
+pub mod macros;
+pub mod colors;
+
 pub mod actions;
 pub mod display;
 pub mod input;
@@ -17,6 +20,8 @@ pub mod components;
 pub mod prelude {
     pub use dioxus_tailwindcss::prelude::*;
 
+    pub use crate::colors::*;
+
     pub use crate::actions::*;
     pub use crate::display::*;
     pub use crate::input::*;
@@ -29,4 +34,6 @@ pub mod prelude {
 
 pub mod ext {
     pub use dioxus_tailwindcss::ext::*;
+
+    pub use crate::semantic_colors;
 }

@@ -11,8 +11,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+## [0.2.1] - 2023-02-27
+
+Update dependencies
+
+### Added
+
+- more constants
+
 ## [0.2.0] - 2023-02-25
 
 ### Added
 
-- constants definition for tailwindcss v3.2.7
+- constants definition for tailwindcss v3.2.7 (to effects)

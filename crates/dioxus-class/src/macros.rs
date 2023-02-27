@@ -32,8 +32,22 @@ macro_rules! constant {
 
 #[macro_export]
 macro_rules! class {
-    ( $( $t:tt )* ) => {
-        Class::from(vec![ $( $t )* ])
+    ( $( $t:expr )* ) => {
+        {
+            let mut __class_values__: Vec<String> = Vec::new();
+            /*
+            let mut index: usize = 0;
+            println!("{}:{}", file!(), line!());
+             */
+            $(
+                __class_values__.push(String::from($t));
+            /*
+                index += 1;
+                println!("{}:{} [{}] {} -> {}", file!(), line!(), index, stringify!($t), String::from($t));
+             */
+            )*
+            Class::from(__class_values__)
+        }
     }
 }
 
@@ -58,10 +72,10 @@ macro_rules! style_type {
         impl Into<Classes> for $type {
             fn into(self) -> Classes {
                 Classes {
-                    name: format!("{}::$type", module_path!()),
+                    name: format!("{}::{}", module_path!(), stringify!($type)),
                     classes: vec![
                     $(
-                        ($key.to_string(), self.$key.clone()),
+                        (stringify!($key).to_owned(), self.$key.clone()),
                     )*
                     ]
                 }

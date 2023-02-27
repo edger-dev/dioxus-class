@@ -15,8 +15,13 @@ pub mod typography;
 pub mod backgrounds;
 pub mod borders;
 pub mod effects;
-
-pub mod components;
+pub mod filters;
+pub mod tables;
+pub mod transitions;
+pub mod transforms;
+pub mod interactivity;
+pub mod svg;
+pub mod accessibility;
 
 pub mod prelude {
     pub use dioxus_class::prelude::*;
@@ -34,8 +39,13 @@ pub mod prelude {
     pub use crate::backgrounds::*;
     pub use crate::borders::*;
     pub use crate::effects::*;
-
-    pub use crate::components::prelude::*;
+    pub use crate::filters::*;
+    pub use crate::tables::*;
+    pub use crate::transitions::*;
+    pub use crate::transforms::*;
+    pub use crate::interactivity::*;
+    pub use crate::svg::*;
+    pub use crate::accessibility::*;
 }
 
 pub mod ext {
@@ -54,4 +64,6 @@ pub mod ext {
     pub use crate::sm_to_2xl;
     pub use crate::xs_to_7xl;
     pub use crate::_3xs_to_7xl;
+    pub use crate::opacities;
+    pub use crate::scales;
 }

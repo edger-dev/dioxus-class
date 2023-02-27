@@ -9,7 +9,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- semantic colors macro and constants
+
 ### Fixed
+
+## [0.2.1] - 2023-02-27
+
+Update dependencies
 
 ## [0.2.0] - 2023-02-25
 

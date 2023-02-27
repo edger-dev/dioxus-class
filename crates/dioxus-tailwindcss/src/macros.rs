@@ -444,3 +444,45 @@ macro_rules! _3xs_to_7xl {
         crate::xs_to_7xl!($( $prefix )*);
     }
 }
+
+#[macro_export]
+macro_rules! opacities {
+    ( $( $prefix:ident )* ) => {
+        constant!($( $prefix )* 0);
+        constant!($( $prefix )* 5);
+        constant!($( $prefix )* 10);
+        constant!($( $prefix )* 20);
+        constant!($( $prefix )* 25);
+        constant!($( $prefix )* 30);
+        constant!($( $prefix )* 40);
+        constant!($( $prefix )* 50);
+        constant!($( $prefix )* 60);
+        constant!($( $prefix )* 70);
+        constant!($( $prefix )* 75);
+        constant!($( $prefix )* 80);
+        constant!($( $prefix )* 90);
+        constant!($( $prefix )* 95);
+        constant!($( $prefix )* 100);
+
+        crate::any!($( $prefix )*);
+    }
+}
+
+#[macro_export]
+macro_rules! scales {
+    ( $( $prefix:ident )* ) => {
+        constant!($( $prefix )* 0);
+        constant!($( $prefix )* 50);
+        constant!($( $prefix )* 75);
+        constant!($( $prefix )* 90);
+        constant!($( $prefix )* 95);
+        constant!($( $prefix )* 100);
+        constant!($( $prefix )* 105);
+        constant!($( $prefix )* 110);
+        constant!($( $prefix )* 125);
+        constant!($( $prefix )* 150);
+
+        crate::any!($( $prefix )*);
+    }
+}
+

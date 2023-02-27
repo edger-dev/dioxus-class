@@ -11,6 +11,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+## [0.2.1] - 2023-02-27
+
+### Added
+
+- add example (todomvc.rs from dioxus examples)
+
+### Fixed
+
+- make class! to use Class::from(), to support more types of expr
+- bugfix with style!
+
+
 ## [0.2.0] - 2023-02-25
 
 ### Added
