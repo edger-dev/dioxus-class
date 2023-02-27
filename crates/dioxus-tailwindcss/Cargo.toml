@@ -13,10 +13,3 @@ repository = { workspace = true }
 [dependencies]
 dioxus = { workspace = true }
 dioxus-class = { workspace = true }
-
-
-[dev-dependencies]
-dioxus-tailwindcss = { workspace = true }
-
-dioxus-desktop = { workspace = true }
-lazy_static = { workspace = true }

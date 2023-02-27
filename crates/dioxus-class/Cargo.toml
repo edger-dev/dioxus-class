@@ -13,10 +13,3 @@ repository = { workspace = true }
 [dependencies]
 dioxus = { workspace = true }
 paste = { workspace = true }
-
-[dev-dependencies]
-dioxus-class = { workspace = true }
-
-dioxus-desktop = { workspace = true }
-im-rc = { workspace = true }
-lazy_static = { workspace = true }
