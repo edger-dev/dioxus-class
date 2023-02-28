@@ -1,8 +1,5 @@
 use crate::ext::*;
 
-constant!(active);
-constant!(disabled);
-
 // https://daisyui.com/components/breadcrumbs/
 constant!(breadcrumbs);
 

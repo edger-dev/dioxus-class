@@ -1,7 +1,6 @@
 #![allow(non_snake_case, non_upper_case_globals)]
 
 pub use dioxus_class;
-pub use dioxus_class::build;
 
 pub mod macros;
 
@@ -22,6 +21,8 @@ pub mod transforms;
 pub mod interactivity;
 pub mod svg;
 pub mod accessibility;
+
+pub mod build;
 
 pub mod prelude {
     pub use dioxus_class::prelude::*;

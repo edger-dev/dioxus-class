@@ -2,7 +2,8 @@
 
 pub use dioxus_tailwindcss;
 pub use dioxus_tailwindcss::dioxus_class;
-pub use dioxus_class::build;
+
+pub use dioxus_tailwindcss::build;
 
 pub mod macros;
 pub mod colors;
@@ -15,8 +16,6 @@ pub mod layout;
 pub mod navigation;
 pub mod mockup;
 
-pub mod components;
-
 pub mod prelude {
     pub use dioxus_tailwindcss::prelude::*;
 
@@ -28,8 +27,6 @@ pub mod prelude {
     pub use crate::layout::*;
     pub use crate::navigation::*;
     pub use crate::mockup::*;
-
-    pub use crate::components::prelude::*;
 }
 
 pub mod ext {

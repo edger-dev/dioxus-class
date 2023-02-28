@@ -1,0 +1,3 @@
+[submodule "external/emojic"]
+	path = external/emojic
+	url = git@github.com:edger-dev/emojic.git

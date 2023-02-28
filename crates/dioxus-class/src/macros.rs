@@ -1,5 +1,3 @@
-pub use paste::paste;
-
 #[macro_export]
 macro_rules! constant_internal {
     ( $( $part:ident )+ _ $next:ident $( $extra:ident )+  ) => {

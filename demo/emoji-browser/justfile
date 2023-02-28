@@ -1,0 +1,10 @@
+serve:
+    cd static && cargo build
+    dioxus serve
+
+release:
+    cd static && cargo build
+    dioxus build --release
+
+watch-css:
+    cd static && cargo watch --watch ../src

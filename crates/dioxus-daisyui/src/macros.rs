@@ -1,5 +1,3 @@
-pub use dioxus_tailwindcss::ext::*;
-
 #[macro_export]
 macro_rules! semantic_colors {
     ( $( $prefix:ident )* ) => {

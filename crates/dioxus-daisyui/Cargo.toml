@@ -13,3 +13,4 @@ repository = { workspace = true }
 [dependencies]
 dioxus = { workspace = true }
 dioxus-tailwindcss = { workspace = true }
+lazy_static = { workspace = true }

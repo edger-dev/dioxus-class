@@ -1,0 +1,34 @@
+[application]
+name = "dioxus-class-demo"
+default_platform = "web"
+out_dir = "dist"
+asset_dir = "public"
+
+[web.app]
+title = "Emoji Browser"
+
+[web.watcher]
+watch_path = ["src", "public"]
+
+index_on_404 = true
+
+# include `assets` in web platform
+[web.resource]
+
+# CSS style file
+style = ["css/tailwind.css"]
+
+# Javascript code file
+script = []
+
+[web.resource.dev]
+
+# Javascript code file
+# serve: [dev-server] only
+script = []
+
+# [application.tools]
+
+# use binaryen.wasm-opt for output Wasm file
+# binaryen just will trigger in `web` platform
+# binaryen = { wasm_opt = true }

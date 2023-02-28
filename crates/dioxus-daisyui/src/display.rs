@@ -141,8 +141,6 @@ constant!(table);
 
 // Modifier
 constant!(table zebra);
-constant!(active);
-constant!(hover);
 
 // Responsive
 constant!(table normal);

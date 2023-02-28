@@ -4,6 +4,21 @@ use std::io::LineWriter;
 use std::io::Write;
 use std::path::Path;
 
+pub fn write_file<P: AsRef<Path> + Clone>(
+    path: P,
+    content: &str,
+) -> Result<(), Box<dyn std::error::Error>> {
+    let path_str = path.clone().as_ref().to_string_lossy().to_string();
+    let file = File::create(path)?;
+    let mut writer = LineWriter::new(file);
+    writer.write_all(content.as_bytes())?;
+    println!(
+        "cargo:warning=dioxus-class::build::write_file: [{}] {}",
+        content.len(), path_str
+    );
+    Ok(())
+}
+
 pub fn generate<P: AsRef<Path> + Clone>(
     path: P,
     styles: Vec<Classes>,
