@@ -18,7 +18,7 @@ pub fn view<'a>(cx: Scope<'a, Props<'a>>) -> Element {
             div {
                 class: class!(card_body text_center items_center),
                 div {
-                    class: class!(card_title text_sm text_primary),
+                    class: class!(card_title text_sm text_base_content),
                     cx.props.alias
                 }
             }

@@ -2249,9 +2249,9 @@ html {
   line-height: 1.25rem;
 }
 
-.text-primary {
+.text-primary-content {
   --tw-text-opacity: 1;
-  color: hsl(var(--p) / var(--tw-text-opacity));
+  color: hsl(var(--pc) / var(--tw-text-opacity));
 }
 
 .shadow-xl {
