@@ -15,7 +15,7 @@ pub fn view<'a>(cx: Scope<'a, Props<'a>>) -> Element {
         input {
             r#type: "text",
             class: class!(w_80 h_12 text_2xl m_4 px_2 input input_primary input_bordered),
-            placeholder: "Type to filter",
+            placeholder: "Type to search",
             oninput: move | evt | {
                 set_filter(evt.value.clone());
             }
