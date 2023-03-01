@@ -9,6 +9,6 @@ edition = "2021"
 
 [build-dependencies]
 dioxus = { workspace = true }
+dioxus-ssr = { workspace = true }
 dioxus-daisyui = { workspace = true }
 emoji-browser = { path = ".." }
-dioxus-ssr = "0.3.0"

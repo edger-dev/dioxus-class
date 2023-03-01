@@ -8,7 +8,10 @@ edition = "2021"
 
 [dependencies]
 dioxus-daisyui = { workspace = true }
+
 dioxus = { workspace = true }
+dioxus-ssr = { workspace = true }
+
 lazy_static = { workspace = true }
 
 emojic = { path = "../../external/emojic", features = [ "alloc" ] }

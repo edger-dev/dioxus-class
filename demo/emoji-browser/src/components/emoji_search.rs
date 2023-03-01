@@ -14,7 +14,7 @@ pub fn view<'a>(cx: Scope<'a, Props<'a>>) -> Element {
     cx.render(rsx!{
         input {
             r#type: "text",
-            class: class!(w_80 h_12 text_2xl m_2 px_2 input input_primary input_bordered),
+            class: class!(w_80 h_12 text_2xl m_4 px_2 input input_primary input_bordered),
             placeholder: "Type to filter",
             oninput: move | evt | {
                 set_filter(evt.value.clone());

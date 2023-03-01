@@ -2137,8 +2137,8 @@ html {
   z-index: 10;
 }
 
-.m-2 {
-  margin: 0.5rem;
+.m-4 {
+  margin: 1rem;
 }
 
 .mx-2 {
@@ -2146,8 +2146,8 @@ html {
   margin-right: 0.5rem;
 }
 
-.mt-16 {
-  margin-top: 4rem;
+.mt-20 {
+  margin-top: 5rem;
 }
 
 .flex {
@@ -2249,9 +2249,9 @@ html {
   line-height: 1.25rem;
 }
 
-.text-primary-content {
+.text-base-content {
   --tw-text-opacity: 1;
-  color: hsl(var(--pc) / var(--tw-text-opacity));
+  color: hsl(var(--bc) / var(--tw-text-opacity));
 }
 
 .shadow-xl {
