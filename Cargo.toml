@@ -15,9 +15,9 @@ members = [
 
 [workspace.dependencies]
 dioxus = "0.3.2"
-dioxus-class = { path = "crates/dioxus-class", version = "0.2.2" }
-dioxus-tailwindcss = { path = "crates/dioxus-tailwindcss", version = "0.2.2" }
-dioxus-daisyui = { path = "crates/dioxus-daisyui", version = "0.2.2" }
+dioxus-class = { path = "crates/dioxus-class", version = "0.3.0" }
+dioxus-tailwindcss = { path = "crates/dioxus-tailwindcss", version = "0.3.0" }
+dioxus-daisyui = { path = "crates/dioxus-daisyui", version = "0.3.0" }
 
 paste = "1.0.11"
 

@@ -13,6 +13,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
+## [0.3.0] - 2023-03-03
+
+### Removed
+
 - remove components, it's hard to get it right.
 
 ## [0.2.2] - 2023-02-27
