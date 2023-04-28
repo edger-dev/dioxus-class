@@ -46,7 +46,7 @@ mod style {
     use lazy_static::lazy_static;
 
     style!{
-        header: lass!(text_gray_400 bg_gray_900 body_font),
+        header: class!(text_gray_400 bg_gray_900 body_font),
         button: class!(inline_flex items_center bg_gray_800 border_0 py_1 px_3 focus(outline_none) hover(bg_gray_700) rounded text_base mt_4 md(mt_0)),
         // more class definition.
     }
