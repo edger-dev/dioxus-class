@@ -81,6 +81,6 @@ Defined constants and modifiers for [daisyui](https://daisyui.com) v2.50.2
 
 ## [Emoji Browser](https://github.com/edger-dev/dioxus-class/tree/main/demos/emoji-browser)
 
-<a href="https://edger.dev/emoji/browser.html" target="_blank">Open web app in new tab</a>
+<a href="https://www.edger.dev/emoji/browser" target="_blank">Open web app in new tab</a>
 
 Search emoji by shortcode, built as demo project.
