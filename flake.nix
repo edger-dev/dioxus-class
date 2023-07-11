@@ -32,6 +32,7 @@
             openssl
             # utility
             just
+            # tailwindcss
             # node tools
             nodejs
             nodePackages.npm

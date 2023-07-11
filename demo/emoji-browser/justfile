@@ -6,5 +6,8 @@ release:
     cd static && cargo build
     dioxus build --release
 
+npm-install:
+    cd static/css && npm install
+
 watch-css:
     cd static && cargo watch --watch ../src
