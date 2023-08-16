@@ -1,10 +1,10 @@
 serve:
     cd static && cargo build
-    dioxus serve
+    dx serve
 
 release:
     cd static && cargo build
-    dioxus build --release
+    dx build --release
 
 npm-install:
     cd static/css && npm install

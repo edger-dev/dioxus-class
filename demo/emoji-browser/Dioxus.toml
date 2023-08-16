@@ -9,6 +9,7 @@ title = "Emoji Browser"
 
 [web.watcher]
 watch_path = ["src", "public"]
+reload_html = true
 
 index_on_404 = true
 

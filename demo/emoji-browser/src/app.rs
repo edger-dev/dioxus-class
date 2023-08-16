@@ -1,7 +1,7 @@
 #![allow(non_snake_case)]
 
 use dioxus::prelude::*;
-use dioxus_router::{Route, Router};
+use dioxus_router::prelude::*;
 use fermi::prelude::*;
 use lazy_static::lazy_static;
 use simsearch::SimSearch;
@@ -34,14 +34,25 @@ pub fn all_emojis() -> Vec<emoji_card::Props<'static>> {
     result
 }
 
-pub static EMOJIS: Atom<Vec<emoji_card::Props>> = |_| all_emojis();
-pub static FILTER: Atom<String> = |_| String::new();
+pub static EMOJIS: Atom<Vec<emoji_card::Props>> = Atom(|_| all_emojis());
+pub static FILTER: Atom<String> = Atom(|_| String::new());
+
+#[derive(Routable, PartialEq, Debug, Clone)]
+pub enum Route {
+    #[route("/")]
+    Home {},
+}
+
+#[inline_props]
+fn Home(cx: Scope) -> Element {
+    render! {
+        home::view {}
+    }
+}
 
 pub fn App(cx: Scope) -> Element {
     use_init_atom_root(cx);
-    cx.render(rsx! {
-        Router {
-            Route { to: "/", home::view {} }
-        }
-    })
+    render!{
+        Router::<Route> {}
+    }
 }

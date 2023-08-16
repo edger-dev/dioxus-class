@@ -10,7 +10,7 @@ pub struct Props<'a> {
 }
 
 pub fn view<'a>(cx: Scope<'a, Props<'a>>) -> Element {
-    let set_filter = use_set(cx, app::FILTER);
+    let set_filter = use_set(cx, &app::FILTER);
     cx.render(rsx!{
         input {
             r#type: "text",

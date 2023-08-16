@@ -8,28 +8,9 @@ use dioxus_daisyui::prelude::*;
 use crate::components::*;
 use crate::app;
 
-lazy_static! {
-    pub static ref ALL_EMOJIS_DOM: String = {
-        let mut dom = VirtualDom::new(|cx| {
-            let all = app::all_emojis();
-            cx.render(rsx!(
-                emoji_grid::view {
-                    all.iter().map(|emoji| rsx!(
-                        emoji_card::view {
-                            alias: emoji.alias,
-                            value: emoji.value,
-                        }
-                    ))
-                }
-            ))
-        });
-        _ = dom.rebuild();
-        dioxus_ssr::render(&dom)
-    };
-}
-
 pub fn view(cx: Scope) -> Element {
-    let filter = use_read(cx, app::FILTER);
+    let all = use_read(cx, &app::EMOJIS);
+    let filter = use_read(cx, &app::FILTER);
     let filtered = if filter.len() == 0 {
         Vec::new()
     } else {
@@ -49,7 +30,14 @@ pub fn view(cx: Scope) -> Element {
             }
             div {
                 class: all_class + &shared_class,
-                dangerous_inner_html: ALL_EMOJIS_DOM.as_str(),
+                emoji_grid::view {
+                    all.iter().map(|emoji| rsx!(
+                        emoji_card::view {
+                            alias: emoji.alias,
+                            value: emoji.value,
+                        }
+                    ))
+                }
             }
             div {
                 class: filter_class + &shared_class,
