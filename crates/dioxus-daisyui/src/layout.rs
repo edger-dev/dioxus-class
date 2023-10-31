@@ -73,6 +73,14 @@ constant!(input group sm);
 constant!(input group xs);
 constant!(input group vertical);
 
+// https://daisyui.com/components/join/
+constant!(join);
+constant!(join item);
+
+// Responsive
+constant!(join vertical);
+constant!(join horizontal);
+
 // https://daisyui.com/components/mask/
 constant!(mask);
 
