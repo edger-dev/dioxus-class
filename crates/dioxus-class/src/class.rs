@@ -1,8 +1,7 @@
 use std::fmt::Display;
 use std::ops::Add;
 use dioxus::prelude::*;
-use dioxus::core::AttributeValue;
-use dioxus::core::exports::bumpalo::Bump;
+use dioxus::dioxus_core::AttributeValue;
 
 #[derive(Clone, PartialEq, Eq, PartialOrd, Ord, Debug)]
 pub struct Class(pub Vec<String>);
@@ -33,17 +32,15 @@ impl Class {
     }
 }
 
-impl<'a> IntoAttributeValue<'a> for Class {
-    fn into_value(self, bump: &'a Bump) -> AttributeValue<'a> {
-        let str_buf = dioxus::core::exports::bumpalo::collections::String::from_str_in(&self.to_class(), bump);
-        AttributeValue::Text(str_buf.into_bump_str())
+impl IntoAttributeValue for Class {
+    fn into_value(self) -> AttributeValue {
+        AttributeValue::Text(self.to_class())
     }
 }
 
-impl<'a> IntoAttributeValue<'a> for &Class {
-    fn into_value(self, bump: &'a Bump) -> AttributeValue<'a> {
-        let str_buf = dioxus::core::exports::bumpalo::collections::String::from_str_in(&self.to_class(), bump);
-        AttributeValue::Text(str_buf.into_bump_str())
+impl IntoAttributeValue for &Class {
+    fn into_value(self) -> AttributeValue {
+        AttributeValue::Text(self.to_class())
     }
 }
 
@@ -208,6 +205,7 @@ impl Add<Option<&Class>> for Class {
 impl Add<&Option<&Class>> for Class {
     type Output = Self;
 
+    #[allow(suspicious_double_ref_op)]
     fn add(self, rhs: &Option<&Class>) -> Self::Output {
         match rhs {
             Some(rhs) => self + rhs.clone(),

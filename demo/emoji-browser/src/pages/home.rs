@@ -1,25 +1,23 @@
 use dioxus::prelude::*;
 
-use lazy_static::lazy_static;
-use fermi::use_read;
-
 use dioxus_daisyui::prelude::*;
 
 use crate::components::*;
 use crate::app;
 
-pub fn view(cx: Scope) -> Element {
-    let all = use_read(cx, &app::EMOJIS);
-    let filter = use_read(cx, &app::FILTER);
+#[component]
+pub fn Home() -> Element {
+    let all: &Vec<emoji_card::Props> = &app::EMOJIS();
+    let filter: &str = &app::FILTER();
     let filtered = if filter.len() == 0 {
         Vec::new()
     } else {
-        app::filter_emojis(filter.as_str())
+        app::filter_emojis(filter)
     };
     let shared_class = class!(bottom_0 h_full mt_20);
     let all_class = if filter.len() > 0 { class!(hidden) } else { Class::NONE };
     let filter_class = if filter.len() == 0 { class!(hidden) } else { Class::NONE };
-    cx.render(rsx!(
+    rsx! {
         div {
             class: class!(w_screen h_screen),
             div {
@@ -31,25 +29,25 @@ pub fn view(cx: Scope) -> Element {
             div {
                 class: all_class + &shared_class,
                 emoji_grid::view {
-                    all.iter().map(|emoji| rsx!(
+                    for emoji in all {
                         emoji_card::view {
                             alias: emoji.alias,
                             value: emoji.value,
                         }
-                    ))
+                    }
                 }
             }
             div {
                 class: filter_class + &shared_class,
                 emoji_grid::view {
-                    filtered.iter().map(|emoji| rsx!(
+                    for emoji in filtered {
                         emoji_card::view {
                             alias: emoji.alias,
                             value: emoji.value,
                         }
-                    ))
+                    }
                 }
             }
         }
-    ))
+    }
 }

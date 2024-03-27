@@ -34,15 +34,15 @@ pub const table_column_group: &'static str = "table-column-group";
 `class!` macro provided for easier definition using string constants, e.g.
 
 ```rust
-cx.render(rsx!{
+rsx! {
     div {
         class: class!(card_body text_center items_center hover(scale_105)),
         div {
             class: class!(card_title text_sm text_base_content),
-            cx.props.alias
+            "text"
         }
     }
-})
+}
 ```
 
 ## [dioxus-tailwindcss](https://github.com/edger-dev/dioxus-class/tree/main/crates/dioxus-tailwindcss)

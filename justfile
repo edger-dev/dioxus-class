@@ -8,3 +8,6 @@ publish-all:
 
 install-dioxus-cli:
     cargo install dioxus-cli
+
+install-dioxus-cli_main:
+    cargo install --git https://github.com/DioxusLabs/dioxus dioxus-cli

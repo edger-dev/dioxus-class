@@ -2,15 +2,14 @@
 
 use dioxus::prelude::*;
 use dioxus_router::prelude::*;
-use fermi::prelude::*;
 use lazy_static::lazy_static;
 use simsearch::SimSearch;
 
 use crate::components::emoji_card;
-use crate::pages::home;
+use crate::pages::*;
 
 lazy_static! {
-    pub static ref SEARCH: SimSearch<emoji_card::Props<'static>> = {
+    pub static ref SEARCH: SimSearch<emoji_card::Props> = {
         let mut engine: SimSearch<emoji_card::Props> = SimSearch::new();
         for emoji in all_emojis().iter() {
             engine.insert(emoji.clone(), emoji.alias);
@@ -19,11 +18,11 @@ lazy_static! {
     };
 }
 
-pub fn filter_emojis(input: &str) -> Vec<emoji_card::Props<'static>> {
+pub fn filter_emojis(input: &str) -> Vec<emoji_card::Props> {
     SEARCH.search(input)
 }
 
-pub fn all_emojis() -> Vec<emoji_card::Props<'static>> {
+pub fn all_emojis() -> Vec<emoji_card::Props> {
     let mut result = vec![];
     for (alias, emoji) in emojic::alias::GEMOJI_MAP.iter() {
         result.push(emoji_card::Props {
@@ -34,8 +33,8 @@ pub fn all_emojis() -> Vec<emoji_card::Props<'static>> {
     result
 }
 
-pub static EMOJIS: Atom<Vec<emoji_card::Props>> = Atom(|_| all_emojis());
-pub static FILTER: Atom<String> = Atom(|_| String::new());
+pub static EMOJIS: GlobalSignal<Vec<emoji_card::Props>> = Signal::global(|| all_emojis());
+pub static FILTER: GlobalSignal<String> = Signal::global(|| String::new());
 
 #[derive(Routable, PartialEq, Debug, Clone)]
 pub enum Route {
@@ -43,16 +42,8 @@ pub enum Route {
     Home {},
 }
 
-#[inline_props]
-fn Home(cx: Scope) -> Element {
-    render! {
-        home::view {}
-    }
-}
-
-pub fn App(cx: Scope) -> Element {
-    use_init_atom_root(cx);
-    render!{
+pub fn App() -> Element {
+    rsx!{
         Router::<Route> {}
     }
 }

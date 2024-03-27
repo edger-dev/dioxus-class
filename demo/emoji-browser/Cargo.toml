@@ -13,7 +13,8 @@ default = [
 ]
 
 web = [
-    "dioxus-router/web",
+    "dioxus/web",
+    "dioxus/router",
 ]
 
 [dependencies]
@@ -25,9 +26,6 @@ lazy_static = { workspace = true }
 
 emojic = { path = "../../external/emojic", features = [ "alloc" ] }
 
-dioxus-web = { workspace = true }
-dioxus-router = { workspace = true }
-fermi = { workspace = true }
 simsearch = { workspace = true }
 
 wasm-logger = "0.2.0"
