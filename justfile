@@ -13,6 +13,6 @@ serve-doc:
     simple-http-server -p 8001 --index --nocache target/doc
 
 install-dioxus-cli:
-    cargo install dioxus-cli@0.5.0-alpha.2
+    cargo install dioxus-cli
 
 
