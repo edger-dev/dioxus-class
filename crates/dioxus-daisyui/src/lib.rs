@@ -1,5 +1,8 @@
 #![allow(non_snake_case, non_upper_case_globals)]
 
+#![doc = include_str!("../README.md")]
+#![doc = include_str!("../../../BUILD.md")]
+
 pub use dioxus_tailwindcss;
 pub use dioxus_tailwindcss::dioxus_class;
 

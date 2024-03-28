@@ -1,3 +1,4 @@
-# daisyUI v2.50.2
+# dioxus-daisyUI
 
 - https://daisyui.com
+- v2.50.2

@@ -5,11 +5,13 @@ macro_rules! constant_internal {
     };
     ( $( $part:ident )+ _ $last:ident ) => {
         paste!{
+            #[doc = concat!($( stringify!($part), "-", )* stringify!($last))]
             pub const [< $( $part _ )* $last >]: &'static str = concat!($( stringify!($part), "-", )* stringify!($last));
         }
     };
     ( $( $part:ident )+ _ $last:literal ) => {
         paste!{
+            #[doc = concat!($( stringify!($part), "-", )* stringify!($last))]
             pub const [< $( $part _ )* $last >]: &'static str = concat!($( stringify!($part), "-", )* stringify!($last));
         }
     };
@@ -18,6 +20,7 @@ macro_rules! constant_internal {
 #[macro_export]
 macro_rules! constant {
     ( $last:ident ) => {
+        #[doc = concat!(stringify!($last))]
         pub const $last: &'static str = concat!(stringify!($last));
     };
     ( $first:ident $( $extra:ident )+  ) => {

@@ -139,7 +139,8 @@ constant!(overscroll x contain);
 constant!(overscroll x none);
 
 // https://tailwindcss.com/docs/position
-constant!(static_);
+#[doc = "static"]
+pub const static_: &'static str = "static";
 constant!(fixed);
 constant!(absolute);
 constant!(relative);

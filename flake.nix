@@ -32,6 +32,7 @@
             openssl
             # utility
             just
+            simple-http-server
             # tailwindcss
             # node tools
             nodejs

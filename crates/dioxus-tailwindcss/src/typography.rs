@@ -102,10 +102,12 @@ constant!(text end);
 // https://tailwindcss.com/docs/text-color
 colors!(text);
 
+/// {text}/{o}
 pub fn with_opacity(text: &str, o: u8) -> String {
     format!("{}/{}", text, o)
 }
 
+/// {text}/[{o}]
 pub fn with_opacity_scale(text: &str, o: f32) -> String {
     format!("{}/[{}]", text, o)
 }

@@ -9,8 +9,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Class
+- Class struct
 
 ### Fixed
 
 ### Removed
+
+## [0.1.0] - 2024-03-28
+
+Initial version, created for dioxus-class-macro
+
+### Added
+
+- Class struct

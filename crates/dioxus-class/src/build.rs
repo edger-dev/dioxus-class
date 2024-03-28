@@ -4,6 +4,7 @@ use std::io::LineWriter;
 use std::io::Write;
 use std::path::Path;
 
+/// write file, for generating classes files
 pub fn write_file<P: AsRef<Path> + Clone>(
     path: P,
     content: &str,
@@ -19,6 +20,7 @@ pub fn write_file<P: AsRef<Path> + Clone>(
     Ok(())
 }
 
+/// write given classes to html format, which can be used by CSS utilities
 pub fn generate_classes<P: AsRef<Path> + Clone>(
     path: P,
     classes: Vec<Class>,

@@ -60,7 +60,7 @@ rsx! {
   </a>
 </div>
 
-Defined constants and modifiers for [tailwindcss](https://tailwindcss.com) v3.2.7
+Defined constants and modifiers for [tailwindcss](https://tailwindcss.com)
 
 ## [dioxus-daisyui](https://github.com/edger-dev/dioxus-class/tree/main/crates/dioxus-daisyui)
 
@@ -77,10 +77,17 @@ Defined constants and modifiers for [tailwindcss](https://tailwindcss.com) v3.2.
   </a>
 </div>
 
-Defined constants and modifiers for [daisyui](https://daisyui.com) v2.50.2
+Defined constants and modifiers for [daisyui](https://daisyui.com)
 
 ## [Emoji Browser](https://github.com/edger-dev/dioxus-class/tree/main/demos/emoji-browser)
 
 <a href="https://www.edger.dev/emoji/browser" target="_blank">Open web app in new tab</a>
 
 Search emoji by shortcode, built as demo project.
+
+
+## Build All Used CSS Classes 
+
+Since tailwindcss need to get all used values, when using `class!`, the default build process is not working.
+
+Check [BUILD.md](https://github.com/edger-dev/dioxus-class/tree/main/BUILD.md) for how to handle this process.

@@ -3,6 +3,15 @@ use std::ops::Add;
 use dioxus::prelude::*;
 use dioxus::dioxus_core::AttributeValue;
 
+/// Class struct is just a wrapper of `Vec<String>`
+///
+/// several From<> provided for easier construction
+/// most of the time, you'll use class! proc_macro to
+/// create instance.
+///
+/// Some Add<> helper also provided, so you can define
+/// common part, and append extra values if needed.
+///
 #[derive(Clone, PartialEq, Eq, PartialOrd, Ord, Debug)]
 pub struct Class(pub Vec<String>);
 

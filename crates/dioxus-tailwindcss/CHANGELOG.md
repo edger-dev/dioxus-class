@@ -11,8 +11,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - add build::tailwindcss to run tailwindcss process
 - update with Dioxus 0.5
+- add docstring
 
 ### Fixed
+
+- `static_` was defined wrongly
 
 ## [0.3.0] - 2023-03-03
 

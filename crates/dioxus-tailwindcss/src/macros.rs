@@ -4,6 +4,7 @@ pub use dioxus_class::ext::*;
 macro_rules! any {
     ( $( $prefix:ident )* ) => {
         paste!{
+            #[doc=concat!($( stringify!($prefix), "-", )* "[{}]")]
             pub fn [< $( $prefix _ )* any >](p: &str) -> String {
                 format!(concat!($( stringify!($prefix), "-", )* "[{}]"), p)
             }
@@ -15,6 +16,7 @@ macro_rules! any {
 macro_rules! minus {
     ( $( $part:ident )+ $last:literal ) => {
         paste!{
+            #[doc=concat!("-", $( stringify!($part), "-", )* stringify!($last))]
             pub const [< minus_ $( $part _ )* $last >]: &'static str = concat!("-", $( stringify!($part), "-", )* stringify!($last));
         }
     }
@@ -328,15 +330,13 @@ macro_rules! size_0_to_96 {
         constant!($( $prefix )* 0);
         constant!($( $prefix )* px);
         paste!{
+            #[doc = concat!($( stringify!($prefix), "-", )* "0.5")]
             pub const [< $( $prefix _ )* _half >]: &'static str = concat!($( stringify!($prefix), "-", )* "0.5");
-        }
-        paste!{
+            #[doc = concat!($( stringify!($prefix), "-", )* "1.5")]
             pub const [< $( $prefix _ )* 1_half >]: &'static str = concat!($( stringify!($prefix), "-", )* "1.5");
-        }
-        paste!{
+            #[doc = concat!($( stringify!($prefix), "-", )* "2.5")]
             pub const [< $( $prefix _ )* 2_half >]: &'static str = concat!($( stringify!($prefix), "-", )* "2.5");
-        }
-        paste!{
+            #[doc = concat!($( stringify!($prefix), "-", )* "3.5")]
             pub const [< $( $prefix _ )* 3_half >]: &'static str = concat!($( stringify!($prefix), "-", )* "3.5");
         }
         crate::_1_to_12!($( $prefix )* );
@@ -365,11 +365,17 @@ macro_rules! size_0_to_96 {
 macro_rules! fraction_2_to_4 {
     ( $( $prefix:ident )* ) => {
         paste!{
+            #[doc = concat!($( stringify!($prefix), "-", )* "1/2")]
             pub const [< $( $prefix _ )* 1__2 >]: &'static str = concat!($( stringify!($prefix), "-", )* "1/2");
+            #[doc = concat!($( stringify!($prefix), "-", )* "1/3")]
             pub const [< $( $prefix _ )* 1__3 >]: &'static str = concat!($( stringify!($prefix), "-", )* "1/3");
+            #[doc = concat!($( stringify!($prefix), "-", )* "2/3")]
             pub const [< $( $prefix _ )* 2__3 >]: &'static str = concat!($( stringify!($prefix), "-", )* "2/3");
+            #[doc = concat!($( stringify!($prefix), "-", )* "1/4")]
             pub const [< $( $prefix _ )* 1__4 >]: &'static str = concat!($( stringify!($prefix), "-", )* "1/4");
+            #[doc = concat!($( stringify!($prefix), "-", )* "2/4")]
             pub const [< $( $prefix _ )* 2__4 >]: &'static str = concat!($( stringify!($prefix), "-", )* "2/4");
+            #[doc = concat!($( stringify!($prefix), "-", )* "3/4")]
             pub const [< $( $prefix _ )* 3__4 >]: &'static str = concat!($( stringify!($prefix), "-", )* "3/4");
         }
     }
@@ -380,14 +386,23 @@ macro_rules! fraction_2_to_6 {
     ( $( $prefix:ident )* ) => {
         crate::fraction_2_to_4!($( $prefix )*);
         paste!{
+            #[doc = concat!($( stringify!($prefix), "-", )* "1/5")]
             pub const [< $( $prefix _ )* 1__5 >]: &'static str = concat!($( stringify!($prefix), "-", )* "1/5");
+            #[doc = concat!($( stringify!($prefix), "-", )* "2/5")]
             pub const [< $( $prefix _ )* 2__5 >]: &'static str = concat!($( stringify!($prefix), "-", )* "2/5");
+            #[doc = concat!($( stringify!($prefix), "-", )* "3/5")]
             pub const [< $( $prefix _ )* 3__5 >]: &'static str = concat!($( stringify!($prefix), "-", )* "3/5");
+            #[doc = concat!($( stringify!($prefix), "-", )* "4/5")]
             pub const [< $( $prefix _ )* 4__5 >]: &'static str = concat!($( stringify!($prefix), "-", )* "4/5");
+            #[doc = concat!($( stringify!($prefix), "-", )* "1/6")]
             pub const [< $( $prefix _ )* 1__6 >]: &'static str = concat!($( stringify!($prefix), "-", )* "1/6");
+            #[doc = concat!($( stringify!($prefix), "-", )* "2/6")]
             pub const [< $( $prefix _ )* 2__6 >]: &'static str = concat!($( stringify!($prefix), "-", )* "2/6");
+            #[doc = concat!($( stringify!($prefix), "-", )* "3/6")]
             pub const [< $( $prefix _ )* 3__6 >]: &'static str = concat!($( stringify!($prefix), "-", )* "3/6");
+            #[doc = concat!($( stringify!($prefix), "-", )* "4/6")]
             pub const [< $( $prefix _ )* 4__6 >]: &'static str = concat!($( stringify!($prefix), "-", )* "4/6");
+            #[doc = concat!($( stringify!($prefix), "-", )* "5/6")]
             pub const [< $( $prefix _ )* 5__6 >]: &'static str = concat!($( stringify!($prefix), "-", )* "5/6");
         }
     }
@@ -397,16 +412,27 @@ macro_rules! fraction_2_to_6 {
 macro_rules! fraction_12 {
     ( $( $prefix:ident )* ) => {
         paste!{
+            #[doc = concat!($( stringify!($prefix), "-", )* "1/12")]
             pub const [< $( $prefix _ )* 1__12 >]: &'static str = concat!($( stringify!($prefix), "-", )* "1/12");
+            #[doc = concat!($( stringify!($prefix), "-", )* "2/12")]
             pub const [< $( $prefix _ )* 2__12 >]: &'static str = concat!($( stringify!($prefix), "-", )* "2/12");
+            #[doc = concat!($( stringify!($prefix), "-", )* "3/12")]
             pub const [< $( $prefix _ )* 3__12 >]: &'static str = concat!($( stringify!($prefix), "-", )* "3/12");
+            #[doc = concat!($( stringify!($prefix), "-", )* "4/12")]
             pub const [< $( $prefix _ )* 4__12 >]: &'static str = concat!($( stringify!($prefix), "-", )* "4/12");
+            #[doc = concat!($( stringify!($prefix), "-", )* "5/12")]
             pub const [< $( $prefix _ )* 5__12 >]: &'static str = concat!($( stringify!($prefix), "-", )* "5/12");
+            #[doc = concat!($( stringify!($prefix), "-", )* "6/12")]
             pub const [< $( $prefix _ )* 6__12 >]: &'static str = concat!($( stringify!($prefix), "-", )* "6/12");
+            #[doc = concat!($( stringify!($prefix), "-", )* "7/12")]
             pub const [< $( $prefix _ )* 7__12 >]: &'static str = concat!($( stringify!($prefix), "-", )* "7/12");
+            #[doc = concat!($( stringify!($prefix), "-", )* "8/12")]
             pub const [< $( $prefix _ )* 8__12 >]: &'static str = concat!($( stringify!($prefix), "-", )* "8/12");
+            #[doc = concat!($( stringify!($prefix), "-", )* "9/12")]
             pub const [< $( $prefix _ )* 9__12 >]: &'static str = concat!($( stringify!($prefix), "-", )* "9/12");
+            #[doc = concat!($( stringify!($prefix), "-", )* "10/12")]
             pub const [< $( $prefix _ )* 10__12 >]: &'static str = concat!($( stringify!($prefix), "-", )* "10/12");
+            #[doc = concat!($( stringify!($prefix), "-", )* "11/12")]
             pub const [< $( $prefix _ )* 11__12 >]: &'static str = concat!($( stringify!($prefix), "-", )* "11/12");
         }
     }

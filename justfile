@@ -6,5 +6,13 @@ publish-all:
     cd crates/dioxus-tailwindcss && cargo publish
     cd crates/dioxus-daisyui && cargo publish
 
+build-doc:
+    cargo doc --no-deps
+
+serve-doc:
+    simple-http-server -p 8001 --index --nocache target/doc
+
 install-dioxus-cli:
     cargo install dioxus-cli@0.5.0-alpha.2
+
+

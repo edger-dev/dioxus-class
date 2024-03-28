@@ -1,5 +1,8 @@
 #![allow(non_snake_case)]
 
+#![doc = include_str!("../README.md")]
+#![doc = include_str!("../../../BUILD.md")]
+
 pub use dioxus_class_internal; 
 pub use dioxus_class_macro; 
 
