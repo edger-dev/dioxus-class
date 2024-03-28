@@ -2,7 +2,7 @@ use proc_macro::TokenStream;
 use quote::ToTokens;
 use syn::parse_macro_input;
 
-#[cfg(feature = "build")]
+#[cfg(feature = "build-classes")]
 mod build;
 
 mod class;

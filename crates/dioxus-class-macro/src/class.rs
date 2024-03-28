@@ -47,7 +47,7 @@ impl ToTokens for Dsl {
                 #(#values_quote),*
             ])
         };
-        #[cfg(feature = "build")]
+        #[cfg(feature = "build-classes")]
         {
             // Span.source_file() is not stable yet
             let lines = format!("/* {:?}\n{}\n */\n{},\n\n",

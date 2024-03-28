@@ -1,4 +1,5 @@
 vec![
+
 /* #258 bytes(434..539)
 class!(card card_compact w_64 h_64 bg_base_300 shadow_xl text_center hover(bg_base_200) hover(scale_105))
  */

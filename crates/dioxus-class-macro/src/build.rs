@@ -14,7 +14,7 @@ fn create_writer() -> Result<LineWriter<File>, Box<dyn std::error::Error>> {
     println!("dioxus-class-macro build: {:?}", &path);
     let file = File::create(path)?;
     let mut writer = LineWriter::new(file);
-    writer.write_all("vec![\n".as_bytes())?;
+    writer.write_all("vec![\n\n".as_bytes())?;
     writer.flush()?;
     Ok(writer)
 }

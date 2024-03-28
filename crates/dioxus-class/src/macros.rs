@@ -27,24 +27,3 @@ macro_rules! constant {
         constant_internal!($( $part )* _ $last);
     };
 }
-
-#[macro_export]
-macro_rules! class {
-    ( $( $t:expr )* ) => {
-        {
-            let mut __class_values__: Vec<String> = Vec::new();
-            /*
-            let mut index: usize = 0;
-            println!("{}:{}", file!(), line!());
-             */
-            $(
-                __class_values__.push(String::from($t));
-            /*
-                index += 1;
-                println!("{}:{} [{}] {} -> {}", file!(), line!(), index, stringify!($t), String::from($t));
-             */
-            )*
-            Class::from(__class_values__)
-        }
-    }
-}
