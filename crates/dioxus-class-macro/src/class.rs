@@ -5,7 +5,7 @@ use syn::parse::{Error, Parse, ParseStream};
 use syn::{Expr, Ident, Token};
 use proc_macro2::Span;
 
-use dioxus_class::prelude::Class;
+use dioxus_class_internal::Class;
 
 pub struct Dsl {
     pub span: Span,

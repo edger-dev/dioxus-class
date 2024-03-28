@@ -10,6 +10,13 @@ repository = { workspace = true }
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[features]
+build-classes = [
+    "dioxus-class-macro/build-classes",
+]
+
 [dependencies]
 dioxus = { workspace = true }
 paste = { workspace = true }
+dioxus-class-internal = { workspace = true }
+dioxus-class-macro = { workspace = true }

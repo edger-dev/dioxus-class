@@ -1,15 +1,17 @@
 #![allow(non_snake_case)]
 
-pub use paste;
+pub use dioxus_class_internal; 
+pub use dioxus_class_macro; 
 
-pub mod class;
+pub use paste;
 
 pub mod macros;
 
 pub mod build;
 
 pub mod prelude {
-    pub use crate::class::Class;
+    pub use dioxus_class_internal::Class;
+    pub use dioxus_class_macro::class;
 }
 
 pub mod ext {

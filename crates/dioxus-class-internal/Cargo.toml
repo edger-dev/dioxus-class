@@ -1,7 +1,7 @@
 [package]
-version = "0.5.0"
-name = "dioxus-tailwindcss"
-description = "Dioxus tailwindcss"
+version = "0.1.0"
+name = "dioxus-class-internal"
+description = "Dioxus class internal"
 
 edition = { workspace = true }
 license = { workspace = true }
@@ -10,11 +10,5 @@ repository = { workspace = true }
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
-[features]
-build-classes = [
-    "dioxus-class/build-classes",
-]
-
 [dependencies]
 dioxus = { workspace = true }
-dioxus-class = { workspace = true }

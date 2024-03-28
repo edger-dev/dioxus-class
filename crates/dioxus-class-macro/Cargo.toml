@@ -14,14 +14,13 @@ repository.workspace = true
 proc-macro = true
 
 [features]
-build = [
+build-classes = [
     "lazy_static",
 ] 
 
 [dependencies]
-dioxus-class = { workspace = true }
+dioxus-class-internal = { workspace = true }
 
-paste = { workspace = true }
 quote = { workspace = true }
 proc-macro2 = { workspace = true }
 syn = { workspace = true }
