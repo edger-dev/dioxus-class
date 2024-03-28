@@ -8,6 +8,7 @@ use proc_macro2::Span;
 use dioxus_class::prelude::Class;
 
 pub struct Dsl {
+    pub span: Span,
     pub text: String,
     pub values: Vec<Expr>,
 }
@@ -15,7 +16,11 @@ pub struct Dsl {
 impl Parse for Dsl {
     #[throws(Error)]
     fn parse(input: ParseStream) -> Self {
-        let text = input.to_string();
+        let span = Span::call_site();
+        let text = match span.source_text() {
+            Some(text) => text,
+            None => input.to_string(),
+        };
         let mut values = vec![];
         loop {
             if input.is_empty() {
@@ -25,6 +30,7 @@ impl Parse for Dsl {
             values.push(val);
         }
         Dsl {
+            span,
             text,
             values,
         }
@@ -43,7 +49,9 @@ impl ToTokens for Dsl {
         };
         #[cfg(feature = "build")]
         {
-            let lines = format!("/* {} */\n{},\n\n", self.text, code);
+            // Span.source_file() is not stable yet
+            let lines = format!("/* {:?}\n{}\n */\n{},\n\n",
+                self.span, self.text, code);
             let _ = crate::build::write_text(&lines);
         }
         tokens.extend(code);
