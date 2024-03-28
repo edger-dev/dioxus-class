@@ -23,3 +23,9 @@ Due to rust's rule on constant names, there are some difference from tailwindcss
 | layout.rs | [link](https://tailwindcss.com/docs/position) | use `static_` instead of `static` | 
 
 TODO: add link and notes for all modules
+
+## Build All Used CSS Classes 
+
+Since tailwindcss need to get all used values, when using `class!`, the default build process is not working.
+
+Check [BUILD.md](https://github.com/edger-dev/dioxus-class/tree/main/BUILD.md) for how to handle this process.
