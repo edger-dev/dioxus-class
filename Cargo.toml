@@ -7,10 +7,10 @@ repository = "https://github.com/edger-dev/dioxus-class"
 [workspace]
 members = [
     "crates/dioxus-class",
+    "crates/dioxus-class-macro",
     "crates/dioxus-tailwindcss",
     "crates/dioxus-daisyui",
     "demo/emoji-browser",
-    "demo/emoji-browser/static",
 ]
 
 resolver = "2"
@@ -18,10 +18,17 @@ resolver = "2"
 [workspace.dependencies]
 dioxus = "0.5.0-alpha.2"
 dioxus-class = { path = "crates/dioxus-class", version = "0.5.0" }
+dioxus-class-macro = { path = "crates/dioxus-class-macro", version = "0.1.0" }
 dioxus-tailwindcss = { path = "crates/dioxus-tailwindcss", version = "0.5.0" }
 dioxus-daisyui = { path = "crates/dioxus-daisyui", version = "0.5.0" }
 
 paste = "1.0.11"
+fehler = "1.0"
+
+quote = "1.0"
+proc-macro2 = "1.0"
+syn = { version = "1.0", features = [ "full" ]}
+procout = "0.1.13"
 
 # demo
 lazy_static = "1.4.0"

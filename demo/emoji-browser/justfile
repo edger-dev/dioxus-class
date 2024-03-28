@@ -1,13 +1,13 @@
 serve:
-    cd static && cargo build
     dx serve
 
 release:
-    cd static && cargo build
     dx build --release
 
 npm-install:
     cd static/css && npm install
 
-watch-css:
-    cd static && cargo watch --watch ../src
+build-classes:
+    cargo test --features "web build-classes"
+    echo "]" >> ../../classes.rs
+    mv -v ../../classes.rs .

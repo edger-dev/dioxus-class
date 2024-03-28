@@ -7,7 +7,4 @@ publish-all:
     cd crates/dioxus-daisyui && cargo publish
 
 install-dioxus-cli:
-    cargo install dioxus-cli
-
-install-dioxus-cli_main:
-    cargo install --git https://github.com/DioxusLabs/dioxus dioxus-cli
+    cargo install dioxus-cli@0.5.0-alpha.2

@@ -10,6 +10,11 @@ repository = { workspace = true }
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[features]
+build-classes = [
+    "dioxus-tailwindcss/build-classes",
+]
+
 [dependencies]
 dioxus = { workspace = true }
 dioxus-tailwindcss = { workspace = true }

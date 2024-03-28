@@ -17,6 +17,13 @@ web = [
     "dioxus/router",
 ]
 
+build-classes = [
+    "dioxus-daisyui/build-classes",
+]
+
+[build-dependencies]
+dioxus-daisyui = { workspace = true }
+
 [dependencies]
 dioxus-daisyui = { workspace = true }
 
@@ -32,3 +39,4 @@ wasm-logger = "0.2.0"
 log = "0.4.19"
 dioxus-logger = "0.4.1"
 console_error_panic_hook = "0.1.7"
+

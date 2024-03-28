@@ -34,34 +34,6 @@ pub const btn_success: &'static str = "btn-success";
 pub const btn_warning: &'static str = "btn-warning";
 ```
 
-### Define style for components
-
-Ideally, most views can be organized as dioxus components, then can define style for each of them alongside the rendering logic.
-
-This sample is based on dioxus-tailwindcss crate, extra build steps might be needed, a full sample will be provided there.
-
-```rust
-mod style {
-    use dioxus_tailwindcss::prelude::*;
-    use lazy_static::lazy_static;
-
-    style!{
-        header: class!(text_gray_400 bg_gray_900 body_font),
-        button: class!(inline_flex items_center bg_gray_800 border_0 py_1 px_3 focus(outline_none) hover(bg_gray_700) rounded text_base mt_4 md(mt_0)),
-        // more class definition.
-    }
-
-    lazy_static! {
-        pub static ref STYLE: Style = Style::default();
-    }
-}
-use style::STYLE;
-
-// then you can use these class constants in rendering logic, e.g.
-//
-// class: &STYLE.header,
-```
-
 ### Add class together
 
 It's common to add extra value to class based on data, Class can be added with &str, String, Vec, Array, Option types, to make this more easy to write.

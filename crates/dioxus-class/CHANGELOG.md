@@ -15,6 +15,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
+- classes.rs
+- class! macro
+- style! macro
+
 ## [0.3.0] - 2023-03-03
 
 ### Removed
@@ -36,7 +40,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - make class! to use Class::from(), to support more types of expr
-- bugfix with style!
+- bugfix with class!
 
 
 ## [0.2.0] - 2023-02-25
@@ -51,4 +55,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Class struct
 - build::generate to write files with defined classes, which can be used for css generation when needed (e.g. used for tailwindcss)
-- macros (class!, style!) for creating styles that includes classes
+- macros (class!, class!) for creating styles that includes classes

@@ -17,18 +17,13 @@ index_on_404 = true
 [web.resource]
 
 # CSS style file
-# style = ["css/tailwind.css"]
-style = []
+style = ["css/tailwind.css"]
 
 # Javascript code file
 script = []
 
 [web.resource.dev]
-style = ["dev/daisyui-4.7.3.min.css"]
-
-# Javascript code file
 # serve: [dev-server] only
-script = ["dev/tailwindcss-3.4.1.js"]
 
 # [application.tools]
 
