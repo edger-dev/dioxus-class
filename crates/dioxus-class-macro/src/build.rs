@@ -11,7 +11,7 @@ fn create_writer() -> Result<LineWriter<File>, Box<dyn std::error::Error>> {
     let mut path = std::env::current_dir()?.clone();
     path.push("classes");
     path.set_extension("rs");
-    println!("dioxus-class-macro build: {:?}", &path);
+    println!("cargo:warning=dioxus-class-macro::build::create_writer(): {:?}", path);
     let file = File::create(path)?;
     let mut writer = LineWriter::new(file);
     writer.write_all("vec![\n\n".as_bytes())?;
@@ -22,6 +22,7 @@ fn create_writer() -> Result<LineWriter<File>, Box<dyn std::error::Error>> {
 pub fn write_bytes(bytes: &[u8]) -> Result<(), Box<dyn std::error::Error>> {
     WRITER.write().unwrap().write_all(bytes)?;
     WRITER.write().unwrap().flush()?;
+    println!("cargo:warning=dioxus-class-macro::build::write_bytes(): {} bytes", bytes.len());
     Ok(())
 }
 
