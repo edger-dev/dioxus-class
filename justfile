@@ -2,6 +2,8 @@ build:
     cargo build
 
 publish-all:
+    cd crates/dioxus-class-internal && cargo publish
+    cd crates/dioxus-class-macro && cargo publish
     cd crates/dioxus-class && cargo publish
     cd crates/dioxus-tailwindcss && cargo publish
     cd crates/dioxus-daisyui && cargo publish
