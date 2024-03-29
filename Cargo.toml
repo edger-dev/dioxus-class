@@ -33,6 +33,5 @@ syn = { version = "1.0", features = [ "full" ]}
 
 # demo
 lazy_static = "1.4.0"
-dioxus-ssr = "0.5.0-alpha.2"
 
 simsearch = "0.2.4"
