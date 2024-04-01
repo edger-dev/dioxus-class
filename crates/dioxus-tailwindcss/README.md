@@ -1,7 +1,7 @@
 # dioxus-tailwindcss
 
 - https://tailwindcss.com
-- v3.2.7
+- v3.4.3
 
 ## Tricks
 
