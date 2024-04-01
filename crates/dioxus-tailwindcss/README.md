@@ -20,9 +20,24 @@ Due to rust's rule on constant names, there are some difference from tailwindcss
 | ---- | ------------- | ----- |
 | modifier.rs | [link](https://tailwindcss.com/docs/hover-focus-and-other-states) | check the #pseudo-class-reference part for complete list |
 | responsive.rs | [link](https://tailwindcss.com/docs/responsive-design) | 2xl is not a valid rust function name, define both `xxl` and `_2xl` for it |
-| layout.rs | [link](https://tailwindcss.com/docs/position) | use `static_` instead of `static` | 
+| dark_mode.rs | [link](https://tailwindcss.com/docs/dark-mode) | use `dark_` instead of `dark` | 
+| layout.rs | [link](https://tailwindcss.com/docs/aspect-ratio) Layout | use `static_` instead of `static` | 
+| flex.rs | [link](https://tailwindcss.com/docs/flex-basics) Flexbox & Grid | | 
+| spacing.rs | [link](https://tailwindcss.com/docs/padding) Spacing | | 
 
-TODO: add link and notes for all modules
+| sizing.rs | [link](https://tailwindcss.com/docs/width) Sizing | | 
+| typography.rs | [link](https://tailwindcss.com/docs/font-family) Typography | | 
+| backgrounds.rs | [link](https://tailwindcss.com/docs/background-attachment) Backgrounds | | 
+| borders.rs | [link](https://tailwindcss.com/docs/border-radius) Borders | | 
+| effects.rs | [link](https://tailwindcss.com/docs/box-shadow) Effects | | 
+| filters.rs | [link](https://tailwindcss.com/docs/blur) Filters | | 
+| tables.rs | [link](https://tailwindcss.com/docs/border-collapse) Tables | | 
+| tansitions.rs | [link](https://tailwindcss.com/docs/transition-property) Transitions & Animation | | 
+| transforms.rs | [link](https://tailwindcss.com/docs/scale) Transforms | | 
+| interactivity.rs | [link](https://tailwindcss.com/docs/accent-color) Interactivity | | 
+| svg.rs | [link](https://tailwindcss.com/docs/fill) SVG | | 
+| accessibility.rs | [link](https://tailwindcss.com/docs/screen-readers) Accessibility | | 
+
 
 ## Build All Used CSS Classes 
 

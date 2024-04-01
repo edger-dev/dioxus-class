@@ -12,6 +12,7 @@ constant!(transition transform);
 any!(transition);
 
 // https://tailwindcss.com/docs/transition-duration
+constant!(duration 0);
 constant!(duration 75);
 constant!(duration 100);
 constant!(duration 150);
@@ -32,6 +33,7 @@ constant!(ease in out);
 any!(ease);
 
 // https://tailwindcss.com/docs/transition-delay
+constant!(delay 0);
 constant!(delay 75);
 constant!(delay 100);
 constant!(delay 150);
@@ -50,10 +52,12 @@ constant!(animate ping);
 constant!(animate pulse);
 constant!(animate bounce);
 
+/// motion-safe:
 pub fn motion_safe(v: &str) -> String {
     "motion-safe:".to_owned() + v
 }
 
+/// motion-reduce:
 pub fn motion_reduce(v: &str) -> String {
     "motion-reduce:".to_owned() + v
 }

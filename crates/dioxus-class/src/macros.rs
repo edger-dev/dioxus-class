@@ -11,8 +11,8 @@ macro_rules! constant_internal {
     };
     ( $( $part:ident )+ _ $last:literal ) => {
         paste!{
-            #[doc = concat!($( stringify!($part), "-", )* stringify!($last))]
-            pub const [< $( $part _ )* $last >]: &'static str = concat!($( stringify!($part), "-", )* stringify!($last));
+            #[doc = concat!($( stringify!($part), "-", )* $last)]
+            pub const [< $( $part _ )* $last >]: &'static str = concat!($( stringify!($part), "-", )* $last);
         }
     };
 }

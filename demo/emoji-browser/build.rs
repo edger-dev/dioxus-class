@@ -14,5 +14,5 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let classes = include!("classes.rs");
     generate_classes(classes_path, classes)?;
     
-    dioxus_daisyui::build::tailwindcss(css_dir, "tailwind.input.css", "../public/css/tailwind.css")
+    dioxus_daisyui::build::npx_tailwindcss(css_dir, "tailwind.input.css", "../public/css/tailwind.css")
 }

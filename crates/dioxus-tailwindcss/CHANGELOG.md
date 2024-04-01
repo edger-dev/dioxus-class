@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+Update with tailwindcss 3.4.3
+
+### Added
+
+- add dark_mode.rs
+- add build::npx_tailwindcss to run tailwindcss with npx
+
+## [0.5.0] - 2024-03-28
+
 ### Added
 
 - add build::tailwindcss to run tailwindcss process

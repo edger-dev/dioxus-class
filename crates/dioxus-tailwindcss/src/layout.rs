@@ -5,6 +5,9 @@ constant!(aspect auto);
 constant!(aspect square);
 constant!(aspect video);
 
+
+// https://tailwindcss.com/docs/aspect-ratio#arbitrary-values
+/// aspect-[{}/{}]
 pub fn aspect(w: u16, h: u16) -> String {
     format!("aspect-[{}/{}]", w, h)
 }
@@ -78,11 +81,15 @@ constant!(list item);
 constant!(hidden);
 
 // https://tailwindcss.com/docs/float
+constant!(float start);
+constant!(float end);
 constant!(float right);
 constant!(float left);
 constant!(float none);
 
 // https://tailwindcss.com/docs/clear
+constant!(clear start);
+constant!(clear end);
 constant!(clear left);
 constant!(clear right);
 constant!(clear both);

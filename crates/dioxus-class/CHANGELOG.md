@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- treat last param in `constant!` as string 
+
+## [0.5.0] - 2024-03-28
+
 ### Added
 
 - update with Dioxus 0.5

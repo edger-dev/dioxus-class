@@ -12,3 +12,7 @@ size_0_to_96!(border spacing y);
 // https://tailwindcss.com/docs/table-layout
 constant!(table auto);
 constant!(table fixed);
+
+// https://tailwindcss.com/docs/caption-side
+constant!(caption top);
+constant!(caption bottom);

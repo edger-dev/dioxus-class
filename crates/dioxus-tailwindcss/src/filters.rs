@@ -4,7 +4,7 @@ use crate::ext::*;
 constant!(blur none);
 constant!(blur);
 sm_to_2xl!(blur);
-constant!(blur 3xl);
+constant!(blur "3xl");
 
 any!(blur);
 
@@ -22,12 +22,12 @@ constant!(brightness 150);
 constant!(brightness 200);
 
 any!(brightness);
+
 // https://tailwindcss.com/docs/contrast
 constant!(contrast 0);
 constant!(contrast 50);
 constant!(contrast 75);
 constant!(contrast 100);
-constant!(contrast 110);
 constant!(contrast 125);
 constant!(contrast 150);
 constant!(contrast 200);
@@ -83,7 +83,7 @@ any!(sepia);
 constant!(backdrop blur none);
 constant!(backdrop blur);
 sm_to_2xl!(backdrop blur);
-constant!(backdrop blur 3xl);
+constant!(backdrop blur "3xl");
 
 any!(backdrop blur);
 
@@ -101,24 +101,17 @@ constant!(backdrop brightness 150);
 constant!(backdrop brightness 200);
 
 any!(backdrop brightness);
+
 // https://tailwindcss.com/docs/backdrop-contrast
 constant!(backdrop contrast 0);
 constant!(backdrop contrast 50);
 constant!(backdrop contrast 75);
 constant!(backdrop contrast 100);
-constant!(backdrop contrast 110);
 constant!(backdrop contrast 125);
 constant!(backdrop contrast 150);
 constant!(backdrop contrast 200);
 
 any!(backdrop contrast);
-
-// https://tailwindcss.com/docs/backdrop-drop-shadow
-constant!(backdrop drop shadow);
-sm_to_2xl!(backdrop drop shadow);
-constant!(backdrop drop shadow none);
-
-any!(backdrop drop shadow);
 
 // https://tailwindcss.com/docs/backdrop-grayscale
 constant!(backdrop grayscale);
@@ -146,7 +139,6 @@ any!(backdrop invert);
 opacities!(backdrop opacity);
 
 // https://tailwindcss.com/docs/backdrop-saturate
-constant!(backdrop saturate);
 constant!(backdrop saturate 0);
 constant!(backdrop saturate 50);
 constant!(backdrop saturate 100);

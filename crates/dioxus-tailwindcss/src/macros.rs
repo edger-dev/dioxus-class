@@ -1,6 +1,40 @@
 pub use dioxus_class::ext::*;
 
 #[macro_export]
+macro_rules! special_ending_internal {
+    ( $( $part:ident )+ _ $next:ident $( $extra:ident )+  ) => {
+        constant_internal!($( $part )* $next _ $( $extra )*);
+    };
+    ( $( $part:ident )+ _ $last_i:ident $last_v:ident ) => {
+        paste!{
+            #[doc = concat!($( stringify!($part), "-", )* stringify!($last_v))]
+            pub const [< $( $part _ )* $last_i >]: &'static str = concat!($( stringify!($part), "-", )* stringify!($last_v));
+        }
+    };
+    ( $( $part:ident )+ _ $last_i:literal $last_v:literal ) => {
+        paste!{
+            #[doc = concat!($( stringify!($part), "-", )* $last_v)]
+            pub const [< $( $part _ )* $last_i >]: &'static str = concat!($( stringify!($part), "-", )* $last_v);
+        }
+    };
+}
+
+#[macro_export]
+macro_rules! special_ending {
+    ( $last_i:ident $last_v:ident ) => {
+        #[doc = concat!(stringify!($last_v))]
+        pub const $last_i: &'static str = concat!(stringify!($last_v));
+    };
+    ( $first:ident $( $extra:ident )+  ) => {
+        special_ending_internal!($first _ $( $extra )*);
+    };
+    ( $( $part:ident )+ $last_i:literal $last_v:literal ) => {
+        special_ending_internal!($( $part )* _ $last_i $last_v);
+    };
+}
+
+
+#[macro_export]
 macro_rules! any {
     ( $( $prefix:ident )* ) => {
         paste!{
@@ -325,6 +359,14 @@ macro_rules! _1_to_12 {
 }
 
 #[macro_export]
+macro_rules! _1_to_13 {
+    ( $( $prefix:ident )* ) => {
+        crate::_1_to_12!($( $prefix )* );
+        constant!($( $prefix )* 13);
+    }
+}
+
+#[macro_export]
 macro_rules! size_0_to_96 {
     ( $( $prefix:ident )* ) => {
         constant!($( $prefix )* 0);
@@ -445,7 +487,7 @@ macro_rules! sm_to_2xl {
         constant!($( $prefix )* md);
         constant!($( $prefix )* lg);
         constant!($( $prefix )* xl);
-        constant!($( $prefix )* 2xl);
+        constant!($( $prefix )* "2xl");
     }
 }
 
@@ -454,19 +496,19 @@ macro_rules! xs_to_7xl {
     ( $( $prefix:ident )* ) => {
         constant!($( $prefix )* xs);
         crate::sm_to_2xl!($( $prefix )*);
-        constant!($( $prefix )* 3xl);
-        constant!($( $prefix )* 4xl);
-        constant!($( $prefix )* 5xl);
-        constant!($( $prefix )* 6xl);
-        constant!($( $prefix )* 7xl);
+        constant!($( $prefix )* "3xl");
+        constant!($( $prefix )* "4xl");
+        constant!($( $prefix )* "5xl");
+        constant!($( $prefix )* "6xl");
+        constant!($( $prefix )* "7xl");
     }
 }
 
 #[macro_export]
 macro_rules! _3xs_to_7xl {
     ( $( $prefix:ident )* ) => {
-        constant!($( $prefix )* 3xs);
-        constant!($( $prefix )* 2xs);
+        constant!($( $prefix )* "3xs");
+        constant!($( $prefix )* "2xs");
         crate::xs_to_7xl!($( $prefix )*);
     }
 }
@@ -477,15 +519,21 @@ macro_rules! opacities {
         constant!($( $prefix )* 0);
         constant!($( $prefix )* 5);
         constant!($( $prefix )* 10);
+        constant!($( $prefix )* 15);
         constant!($( $prefix )* 20);
         constant!($( $prefix )* 25);
         constant!($( $prefix )* 30);
+        constant!($( $prefix )* 35);
         constant!($( $prefix )* 40);
+        constant!($( $prefix )* 45);
         constant!($( $prefix )* 50);
+        constant!($( $prefix )* 55);
         constant!($( $prefix )* 60);
+        constant!($( $prefix )* 65);
         constant!($( $prefix )* 70);
         constant!($( $prefix )* 75);
         constant!($( $prefix )* 80);
+        constant!($( $prefix )* 85);
         constant!($( $prefix )* 90);
         constant!($( $prefix )* 95);
         constant!($( $prefix )* 100);
@@ -512,3 +560,52 @@ macro_rules! scales {
     }
 }
 
+
+#[macro_export]
+macro_rules! percents {
+    ( $( $prefix:ident )* ) => {
+        special_ending!($( $prefix )* 0_pct "0%");
+        special_ending!($( $prefix )* 5_pct "5%");
+        special_ending!($( $prefix )* 10_pct "10%");
+        special_ending!($( $prefix )* 15_pct "15%");
+        special_ending!($( $prefix )* 20_pct "20%");
+        special_ending!($( $prefix )* 25_pct "25%");
+        special_ending!($( $prefix )* 30_pct "30%");
+        special_ending!($( $prefix )* 35_pct "35%");
+        special_ending!($( $prefix )* 40_pct "40%");
+        special_ending!($( $prefix )* 45_pct "45%");
+        special_ending!($( $prefix )* 50_pct "50%");
+        special_ending!($( $prefix )* 55_pct "55%");
+        special_ending!($( $prefix )* 60_pct "60%");
+        special_ending!($( $prefix )* 65_pct "65%");
+        special_ending!($( $prefix )* 70_pct "70%");
+        special_ending!($( $prefix )* 75_pct "75%");
+        special_ending!($( $prefix )* 80_pct "80%");
+        special_ending!($( $prefix )* 85_pct "85%");
+        special_ending!($( $prefix )* 90_pct "90%");
+        special_ending!($( $prefix )* 95_pct "95%");
+        special_ending!($( $prefix )* 100_pct "100%");
+    }
+}
+
+#[macro_export]
+macro_rules! border_radius {
+    ( $( $prefix:ident )* ) => {
+        constant!($( $prefix )*);
+        constant!($( $prefix )* none);
+        sm_to_2xl!($( $prefix )*);
+        constant!($( $prefix )* "3xl");
+        constant!($( $prefix )* full);
+    }
+}
+
+#[macro_export]
+macro_rules! border_width {
+    ( $( $prefix:ident )* ) => {
+        constant!($( $prefix )*);
+        constant!($( $prefix )* 0);
+        constant!($( $prefix )* 2);
+        constant!($( $prefix )* 4);
+        constant!($( $prefix )* 8);
+    }
+}

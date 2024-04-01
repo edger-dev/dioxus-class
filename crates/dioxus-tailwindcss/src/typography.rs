@@ -13,14 +13,14 @@ constant!(text sm);
 constant!(text base);
 constant!(text lg);
 constant!(text xl);
-constant!(text 2xl);
-constant!(text 3xl);
-constant!(text 4xl);
-constant!(text 5xl);
-constant!(text 6xl);
-constant!(text 7xl);
-constant!(text 8xl);
-constant!(text 9xl);
+constant!(text "2xl");
+constant!(text "3xl");
+constant!(text "4xl");
+constant!(text "5xl");
+constant!(text "6xl");
+constant!(text "7xl");
+constant!(text "8xl");
+constant!(text "9xl");
 
 // https://tailwindcss.com/docs/font-smoothing
 constant!(antialiased);
@@ -62,6 +62,17 @@ constant!(tracking widest);
 
 any!(tracking);
 
+// https://tailwindcss.com/docs/line-clamp
+constant!(line clamp 1);
+constant!(line clamp 2);
+constant!(line clamp 3);
+constant!(line clamp 4);
+constant!(line clamp 5);
+constant!(line clamp 6);
+constant!(line clamp none);
+
+any!(line clamp);
+
 // https://tailwindcss.com/docs/line-height
 constant!(leading 3);
 constant!(leading 4);
@@ -80,16 +91,19 @@ constant!(leading loose);
 
 any!(leading);
 
+// https://tailwindcss.com/docs/list-style-image
+constant!(list image none);
+
+// https://tailwindcss.com/docs/list-style-position
+constant!(list inside);
+constant!(list outside);
+
 // https://tailwindcss.com/docs/list-style-type
 constant!(list none);
 constant!(list disc);
 constant!(list decimal);
 
 any!(list);
-
-// https://tailwindcss.com/docs/list-style-position
-constant!(list inside);
-constant!(list outside);
 
 // https://tailwindcss.com/docs/text-align
 constant!(text left);
@@ -158,6 +172,12 @@ constant!(truncate);
 constant!(text ellipsis);
 constant!(text clip);
 
+// https://tailwindcss.com/docs/text-wrap
+constant!(text wrap);
+constant!(text nowrap);
+constant!(text balance);
+constant!(text pretty);
+
 // https://tailwindcss.com/docs/text-indent
 size_0_to_96!(indent);
 
@@ -179,12 +199,18 @@ constant!(whitespace nowrap);
 constant!(whitespace pre);
 constant!(whitespace pre line);
 constant!(whitespace pre wrap);
+constant!(whitespace break spaces);
 
 // https://tailwindcss.com/docs/word-break
 constant!(break normal);
 constant!(break words);
 constant!(break all);
 constant!(break keep);
+
+// https://tailwindcss.com/docs/hyphens
+constant!(hyphens none);
+constant!(hyphens manual);
+constant!(hyphens auto);
 
 // https://tailwindcss.com/docs/content
 constant!(content none);

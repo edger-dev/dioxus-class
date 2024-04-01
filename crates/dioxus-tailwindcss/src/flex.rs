@@ -49,6 +49,7 @@ any!(order);
 // https://tailwindcss.com/docs/grid-template-columns
 _1_to_12!(grid cols);
 constant!(grid cols none);
+constant!(grid cols subgrid);
 
 any!(grid cols);
 
@@ -58,10 +59,10 @@ constant!(col auto);
 _1_to_12!(col span);
 constant!(col span full);
 
-_1_to_12!(col start);
+_1_to_13!(col start);
 constant!(col start auto);
 
-_1_to_12!(col end);
+_1_to_13!(col end);
 constant!(col end auto);
 
 any!(col);
@@ -71,20 +72,19 @@ any!(col end);
 // https://tailwindcss.com/docs/grid-template-rows
 _1_to_6!(grid rows);
 constant!(grid rows none);
+constant!(grid rows subgrid);
 
 any!(grid rows);
 
 // https://tailwindcss.com/docs/grid-row
 constant!(row auto);
-_1_to_6!(row span);
+_1_to_12!(row span);
 constant!(row span full);
 
-_1_to_6!(row start);
-constant!(row start 7);
+_1_to_13!(row start);
 constant!(row start auto);
 
-_1_to_6!(row end);
-constant!(row end 7);
+_1_to_13!(row end);
 constant!(row end auto);
 
 any!(row);
@@ -122,12 +122,14 @@ size_0_to_96!(gap x);
 size_0_to_96!(gap y);
 
 // https://tailwindcss.com/docs/justify-content
+constant!(justify normal);
 constant!(justify start);
 constant!(justify end);
 constant!(justify center);
 constant!(justify between);
 constant!(justify around);
 constant!(justify evenly);
+constant!(justify stretch);
 
 // https://tailwindcss.com/docs/justify-items
 constant!(justify items start);
@@ -143,13 +145,15 @@ constant!(justify self center);
 constant!(justify self stretch);
 
 // https://tailwindcss.com/docs/align-content
+constant!(content normal);
+constant!(content center);
 constant!(content start);
 constant!(content end);
-constant!(content center);
 constant!(content between);
 constant!(content around);
 constant!(content evenly);
 constant!(content baseline);
+constant!(content stretch);
 
 // https://tailwindcss.com/docs/align-items
 constant!(items start);
@@ -163,13 +167,13 @@ constant!(self auto);
 constant!(self start);
 constant!(self end);
 constant!(self center);
-constant!(self baseline);
 constant!(self stretch);
+constant!(self baseline);
 
 // https://tailwindcss.com/docs/place-content
+constant!(place content center);
 constant!(place content start);
 constant!(place content end);
-constant!(place content center);
 constant!(place content between);
 constant!(place content around);
 constant!(place content evenly);

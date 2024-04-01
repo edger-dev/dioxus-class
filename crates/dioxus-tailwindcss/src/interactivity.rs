@@ -6,6 +6,7 @@ constant!(accent auto);
 
 // https://tailwindcss.com/docs/appearance
 constant!(appearance none);
+constant!(appearance auto);
 
 // https://tailwindcss.com/docs/cursor
 constant!(cursor auto);
@@ -68,6 +69,8 @@ constant!(scroll smooth);
 size_0_to_96!(scroll m);
 size_0_to_96!(scroll mx);
 size_0_to_96!(scroll my);
+size_0_to_96!(scroll ms);
+size_0_to_96!(scroll me);
 size_0_to_96!(scroll mt);
 size_0_to_96!(scroll mr);
 size_0_to_96!(scroll mb);
@@ -77,6 +80,8 @@ size_0_to_96!(scroll ml);
 size_0_to_96!(scroll p);
 size_0_to_96!(scroll px);
 size_0_to_96!(scroll py);
+size_0_to_96!(scroll ps);
+size_0_to_96!(scroll pe);
 size_0_to_96!(scroll pt);
 size_0_to_96!(scroll pr);
 size_0_to_96!(scroll pb);

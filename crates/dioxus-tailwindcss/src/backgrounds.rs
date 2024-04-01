@@ -56,4 +56,8 @@ constant!(bg gradient to tl);
 
 // https://tailwindcss.com/docs/gradient-color-stops
 colors!(from);
+percents!(from);
+colors!(via);
+percents!(via);
 colors!(to);
+percents!(to);
