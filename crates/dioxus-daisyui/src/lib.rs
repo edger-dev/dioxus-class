@@ -16,6 +16,7 @@ pub mod input;
 pub mod layout;
 
 pub mod navigation;
+pub mod feedback;
 pub mod mockup;
 
 pub mod prelude {
@@ -28,6 +29,7 @@ pub mod prelude {
     pub use crate::input::*;
     pub use crate::layout::*;
     pub use crate::navigation::*;
+    pub use crate::feedback::*;
     pub use crate::mockup::*;
 }
 

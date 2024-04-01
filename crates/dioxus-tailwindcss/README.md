@@ -1,6 +1,6 @@
 # dioxus-tailwindcss
 
-- https://tailwindcss.com
+- [Tailwind CSS](https://tailwindcss.com)
 - v3.4.3
 
 ## Tricks

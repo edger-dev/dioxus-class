@@ -4,6 +4,7 @@ use crate::ext::*;
 constant!(btn);
 
 // Modifier
+constant!(btn neutral);
 constant!(btn primary);
 constant!(btn secondary);
 constant!(btn accent);
@@ -18,7 +19,6 @@ constant!(btn active);
 constant!(btn disabled);
 
 constant!(glass);
-constant!(loading);
 constant!(no animation);
 
 // Responsive
@@ -48,12 +48,14 @@ constant!(dropdown open);
 constant!(modal);
 constant!(modal box);
 constant!(modal action);
+constant!(modal backdrop);
 constant!(modal toggle);
 
 // Modifier
 constant!(modal open);
 
 // Responsive
+constant!(modal top);
 constant!(modal bottom);
 constant!(modal middle);
 
@@ -67,3 +69,6 @@ constant!(swap indeterminate);
 constant!(swap active);
 constant!(swap rotate);
 constant!(swap flip);
+
+// https://daisyui.com/components/theme-controller/
+constant!(theme controller);

@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.6.0] - 2024-04-01
+
+### Added
+
+- update with Daisyui 4.9.0
+
 ## [0.5.0] - 2024-03-28
 
 ### Added

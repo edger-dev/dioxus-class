@@ -5,7 +5,6 @@ constant!(artboard);
 
 // Modifier
 constant!(artboard demo);
-constant!(artboard horizontal);
 
 constant!(phone 1);
 constant!(phone 2);
@@ -14,19 +13,26 @@ constant!(phone 4);
 constant!(phone 5);
 constant!(phone 6);
 
-// https://daisyui.com/components/button-group/
-constant!(btn group);
-
-// Responsive
-constant!(btn group horizontal);
-constant!(btn group vertical);
+constant!(artboard horizontal);
 
 // https://daisyui.com/components/divider/
 constant!(divider);
 
+// Modifier
+constant!(divider neutral);
+constant!(divider primary);
+constant!(divider secondary);
+constant!(divider accent);
+constant!(divider success);
+constant!(divider warning);
+constant!(divider info);
+constant!(divider error);
+
 // Responsive
-constant!(divider horizontal);
 constant!(divider vertical);
+constant!(divider horizontal);
+constant!(divider start);
+constant!(divider end);
 
 // https://daisyui.com/components/drawer/
 constant!(drawer);
@@ -35,15 +41,17 @@ constant!(drawer content);
 constant!(drawer side);
 constant!(drawer overlay);
 
-// Responsive
-constant!(drawer mobile);
+// Modifier
 constant!(drawer end);
+
+// Responsive
+constant!(drawer open);
 
 // https://daisyui.com/components/footer/
 constant!(footer);
 constant!(footer title);
 
-// Responsive
+// Modifier
 constant!(footer center);
 
 // https://daisyui.com/components/hero/
@@ -62,16 +70,6 @@ constant!(indicator end);
 constant!(indicator top);
 constant!(indicator middle);
 constant!(indicator bottom);
-
-// https://daisyui.com/components/input-group/
-constant!(input group);
-
-// Modifier
-constant!(input group lg);
-constant!(input group md);
-constant!(input group sm);
-constant!(input group xs);
-constant!(input group vertical);
 
 // https://daisyui.com/components/join/
 constant!(join);
@@ -109,15 +107,3 @@ constant!(mask half 2);
 
 // https://daisyui.com/components/stack/
 constant!(stack);
-
-// https://daisyui.com/components/toast/
-constant!(toast);
-
-// Responsive
-constant!(toast start);
-constant!(toast center);
-constant!(toast end);
-constant!(toast top);
-constant!(toast middle);
-constant!(toast bottom);
-

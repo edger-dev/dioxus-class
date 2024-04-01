@@ -1,7 +1,19 @@
 # dioxus-daisyUI
 
-- https://daisyui.com
-- v2.50.2
+- [Daisy UI](https://daisyui.com)
+- v4.9.0
+
+## Documents for Updating
+
+| Code | Documentation | Notes |
+| ---- | ------------- | ----- |
+| actions.rs | [link](https://daisyui.com/components/button/) Actions |
+| display.rs | [link](https://daisyui.com/components/accordion/) Data display |
+| navigation.rs | [link](https://daisyui.com/components/breadcrumbs/) Navigation | use `active_ disabled_ focus_` instead of `active disabled focus`, the names been taken by tailwindcss as modifiers |
+| feedback.rs | [link](https://daisyui.com/components/alert/) Feedback |
+| input.rs | [link](https://daisyui.com/components/checkbox/) Data input |
+| layout.rs | [link](https://daisyui.com/components/artboard/) Layout |
+| mockup.rs | [link](https://daisyui.com/components/mockup-browser/) Mockup|
 
 ## Build All Used CSS Classes 
 

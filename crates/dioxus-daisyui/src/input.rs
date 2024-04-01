@@ -1,6 +1,7 @@
 use crate::ext::*;
 
 constant!(form control);
+constant!(label);
 
 // https://daisyui.com/components/checkbox/
 constant!(checkbox);
@@ -30,9 +31,9 @@ constant!(file input ghost);
 constant!(file input primary);
 constant!(file input secondary);
 constant!(file input accent);
+constant!(file input info);
 constant!(file input success);
 constant!(file input warning);
-constant!(file input info);
 constant!(file input error);
 
 // Responsive
@@ -100,9 +101,9 @@ constant!(select ghost);
 constant!(select primary);
 constant!(select secondary);
 constant!(select accent);
+constant!(select info);
 constant!(select success);
 constant!(select warning);
-constant!(select info);
 constant!(select error);
 
 // Responsive
@@ -121,9 +122,9 @@ constant!(input ghost);
 constant!(input primary);
 constant!(input secondary);
 constant!(input accent);
+constant!(input info);
 constant!(input success);
 constant!(input warning);
-constant!(input info);
 constant!(input error);
 
 // Responsive
@@ -142,9 +143,9 @@ constant!(textarea ghost);
 constant!(textarea primary);
 constant!(textarea secondary);
 constant!(textarea accent);
+constant!(textarea info);
 constant!(textarea success);
 constant!(textarea warning);
-constant!(textarea info);
 constant!(textarea error);
 
 // Responsive
