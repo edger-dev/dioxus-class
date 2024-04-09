@@ -16,50 +16,79 @@ We will run `cargo test --features "build-classes"` to generate that file, then 
 
 ## Build Steps
 
-### Generate `classes.rs`
-
-I'm using [just](https://github.com/casey/just) to run this step:
+I'm using [just](https://github.com/casey/just) to run these steps, also provided sample for watching src folder and rebuild the classes with `cargo watch`
 
 ```just
 build-classes:
-    cargo test --features "web build-classes"
-    echo "]" >> ../../classes.rs
-    mv -v ../../classes.rs .
+    DIOXUS_CLASS_BUILD_PATH="$PWD/css/classes.rs" cargo test --features "web build-classes"
+    cargo build
+    cd css && cargo build
+
+clear-buffer:
+    echo -e -n "\\0033c" && tmux clear-history
+
+watch-classes:
+    cargo watch -w src/ -s "just clear-buffer && cargo rustc --lib -- -Awarnings && just build-classes"
 ```
 
-### Sample `build.rs`
+
+### Generate `classes.rs`
+
+`DIOXUS_CLASS_BUILD_PATH="$PWD/css/classes.rs" cargo test --features "web build-classes"`
+
+By running `cargo test` with `build-classes` feature, classes.rs will be created at given position.
+
+Note that by default, cargo will also run doctest, so the file will be generated twice, adding this to `Cargo.toml` can bypass the doctest running
+
+```
+[lib]
+doctest = false
+```
+
+### Make sure `classes.rs` is having proper format
+
+[build.rs](https://github.com/edger-dev/dioxus-class/tree/main/demos/emoji-browser/build.rs)
+
+`check_classes` will check the given file, if it's not there, create an empty one with `vec![]` as content, of checking whether it ends with `]`, if not, adding one. 
+
+This step is needed, since I can't find a way to execute cleanup logic in the classes generation, for that file to be used later, it must be a valid `vec<Class>`. 
 
 ```rust
 use std::env;
 use std::path::Path;
-
-use dioxus_daisyui::build::generate_classes;
-use dioxus_daisyui::prelude::*;
+use dioxus_daisyui::build::*;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
-    println!("cargo:rerun-if-changed=styles.rs");
-    // let out_dir = env::var_os("OUT_DIR").unwrap();
     let current_dir = env::current_dir()?;
     let css_dir = Path::new(&current_dir).join("css");
-
-    let classes_path = Path::new(&css_dir).join("classes.html");
-    let classes = include!("classes.rs");
-    generate_classes(classes_path, classes)?;
-    
-    dioxus_daisyui::build::tailwindcss(css_dir, "tailwind.input.css", "../public/css/tailwind.css")
+    let classes_path = Path::new(&css_dir).join("classes.rs");
+    check_classes(classes_path)
 }
 ```
 
-## Caveats
+### Generate `classes.html` and build with tailwindcss
 
-### Missing `]` in classes.rs
+[A simple cargo project created for this step](https://github.com/edger-dev/dioxus-class/tree/main/demos/emoji-browser/css)
 
-For the `classes.rs` to be used by `include!()`, it must contain a single expression, I don't know how to write the final `]`, so current solution is to add it in build script.
+[build.rs](https://github.com/edger-dev/dioxus-class/tree/main/demos/emoji-browser/css/build.rs)
 
-### Initial content for `classes.rs`
+```
+use std::env;
+use std::path::Path;
 
-For `build.rs` to work, a proper `classes.rs` is needed, before step 1 first done, need to either comment out the related codes in build.rs or rename `build.rs` temporary, you can also manually create a `classes.rs` with content as `vec![]`
+use dioxus_daisyui::build::*;
+use dioxus_daisyui::prelude::*;
 
-### `classes.rs` Generated at Workspace Root Path
+fn main() -> Result<(), Box<dyn std::error::Error>> {
+    println!("cargo:rerun-if-changed=classes.rs");
+    // let out_dir = env::var_os("OUT_DIR").unwrap();
+    let current_dir = env::current_dir()?;
 
-I'd like it to be generated under project path, but don't know how to do that yet. 
+    let classes_path = Path::new(&current_dir).join("classes.html");
+    let classes = include!("classes.rs");
+    generate_classes(classes_path, classes)?;
+    
+    npx_tailwindcss(current_dir, "tailwind.input.css", "../assets/css/tailwind.css")
+}
+
+```

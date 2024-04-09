@@ -2,13 +2,13 @@
 name = "dioxus-class-demo"
 default_platform = "web"
 out_dir = "dist"
-asset_dir = "public"
+asset_dir = "assets"
 
 [web.app]
 title = "Emoji Browser"
 
 [web.watcher]
-watch_path = ["src", "public"]
+watch_path = ["src", "assets"]
 reload_html = true
 
 index_on_404 = true

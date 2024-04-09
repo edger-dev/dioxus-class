@@ -1,0 +1,6 @@
+build:
+    cargo build
+
+npm-install:
+    npm install
+

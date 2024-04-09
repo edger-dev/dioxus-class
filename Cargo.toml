@@ -12,18 +12,19 @@ members = [
     "crates/dioxus-tailwindcss",
     "crates/dioxus-daisyui",
     "demo/emoji-browser",
+    "demo/emoji-browser/css",
 ]
 
 resolver = "2"
 
 [workspace.dependencies]
-dioxus = "0.5.0"
-dioxus-class = { path = "crates/dioxus-class", version = "0.6.0" }
-dioxus-class-internal = { path = "crates/dioxus-class-internal", version = "0.5.0" }
-dioxus-class-macro = { path = "crates/dioxus-class-macro", version = "0.5.0" }
-dioxus-tailwindcss = { path = "crates/dioxus-tailwindcss", version = "0.6.0" }
-dioxus-daisyui = { path = "crates/dioxus-daisyui", version = "0.6.0" }
+dioxus-class = { path = "crates/dioxus-class", version = "0.7.0" }
+dioxus-class-internal = { path = "crates/dioxus-class-internal", version = "0.7.0" }
+dioxus-class-macro = { path = "crates/dioxus-class-macro", version = "0.7.0" }
+dioxus-tailwindcss = { path = "crates/dioxus-tailwindcss", version = "0.7.0" }
+dioxus-daisyui = { path = "crates/dioxus-daisyui", version = "0.7.0" }
 
+dioxus = "0.5.0"
 paste = "1.0.11"
 fehler = "1.0"
 

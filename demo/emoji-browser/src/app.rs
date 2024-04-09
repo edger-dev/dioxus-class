@@ -1,7 +1,6 @@
 #![allow(non_snake_case)]
 
 use dioxus::prelude::*;
-use dioxus_router::prelude::*;
 use lazy_static::lazy_static;
 use simsearch::SimSearch;
 

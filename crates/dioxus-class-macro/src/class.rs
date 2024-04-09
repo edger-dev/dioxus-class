@@ -1,11 +1,9 @@
-use fehler::{throw, throws};
+use fehler::throws;
 use quote::{quote, ToTokens};
 use proc_macro2::TokenStream;
 use syn::parse::{Error, Parse, ParseStream};
-use syn::{Expr, Ident, Token};
+use syn::Expr;
 use proc_macro2::Span;
-
-use dioxus_class_internal::Class;
 
 pub struct Dsl {
     pub span: Span,
@@ -52,7 +50,7 @@ impl ToTokens for Dsl {
             // Span.source_file() is not stable yet
             let lines = format!("/* {:?}\n{}\n */\n{},\n\n",
                 self.span, self.text, code);
-            let _ = crate::build::write_text(&lines);
+            let _ = crate::build::write_text(&self.text, &lines);
         }
         tokens.extend(code);
     }

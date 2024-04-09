@@ -1,0 +1,14 @@
+[package]
+publish = false
+version = "0.0.0"
+name = "emoji-browser-css"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[features]
+
+[build-dependencies]
+dioxus-daisyui = { workspace = true }
+
+[dependencies]

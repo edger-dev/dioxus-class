@@ -5,9 +5,15 @@ release:
     dx build --release
 
 npm-install:
-    cd static/css && npm install
+    cd css && npm install
 
 build-classes:
-    cargo test --features "web build-classes"
-    echo "]" >> ../../classes.rs
-    mv -v ../../classes.rs .
+    DIOXUS_CLASS_BUILD_PATH="$PWD/css/classes.rs" cargo test --features "web build-classes"
+    cargo build
+    cd css && cargo build
+
+clear-buffer:
+    echo -e -n "\\0033c" && tmux clear-history
+
+watch-classes:
+    cargo watch -w src/ -s "just clear-buffer && cargo rustc --lib -- -Awarnings && just build-classes"
