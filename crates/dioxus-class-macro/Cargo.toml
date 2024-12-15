@@ -1,6 +1,6 @@
 [package]
 name = "dioxus-class-macro"
-version = "0.7.0"
+version = "0.8.0"
 description = "Dioxus class proc_macro"
 
 edition.workspace = true

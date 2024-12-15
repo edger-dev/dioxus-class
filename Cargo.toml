@@ -18,21 +18,33 @@ members = [
 resolver = "2"
 
 [workspace.dependencies]
-dioxus-class = { path = "crates/dioxus-class", version = "0.7.0" }
-dioxus-class-internal = { path = "crates/dioxus-class-internal", version = "0.7.0" }
-dioxus-class-macro = { path = "crates/dioxus-class-macro", version = "0.7.0" }
-dioxus-tailwindcss = { path = "crates/dioxus-tailwindcss", version = "0.7.0" }
-dioxus-daisyui = { path = "crates/dioxus-daisyui", version = "0.7.0" }
+dioxus-class = { path = "crates/dioxus-class", version = "0.8.0" }
+dioxus-class-internal = { path = "crates/dioxus-class-internal", version = "0.8.0" }
+dioxus-class-macro = { path = "crates/dioxus-class-macro", version = "0.8.0" }
+dioxus-tailwindcss = { path = "crates/dioxus-tailwindcss", version = "0.8.0" }
+dioxus-daisyui = { path = "crates/dioxus-daisyui", version = "0.8.0" }
 
-dioxus = "0.5.0"
-paste = "1.0.11"
+dioxus = "0.6.0"
+paste = "1.0.15"
 fehler = "1.0"
 
 quote = "1.0"
 proc-macro2 = "1.0"
-syn = { version = "1.0", features = [ "full" ]}
+syn = { version = "2.0", features = [ "full" ]}
 
 # demo
 lazy_static = "1.4.0"
 
 simsearch = "0.2.4"
+
+[profile]
+
+[profile.wasm-dev]
+inherits = "dev"
+opt-level = 1
+
+[profile.server-dev]
+inherits = "dev"
+
+[profile.android-dev]
+inherits = "dev"
