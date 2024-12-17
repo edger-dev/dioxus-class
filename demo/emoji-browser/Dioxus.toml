@@ -17,7 +17,7 @@ index_on_404 = true
 [web.resource]
 
 # CSS style file
-style = ["css/tailwind.css"]
+style = ["assets/css/tailwind.css"]
 
 # Javascript code file
 script = []
