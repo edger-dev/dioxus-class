@@ -22,6 +22,7 @@ constant!(glass);
 constant!(no animation);
 
 // Responsive
+constant!(btn xl);
 constant!(btn lg);
 constant!(btn md);
 constant!(btn sm);
